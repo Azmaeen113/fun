@@ -1,0 +1,33 @@
+# Image Placeholders for FUN Memecoin Website
+
+This directory contains placeholder files for all the character images mentioned in the development brief.
+
+## Required Images:
+
+### Hero/Main Character:
+- 1000006803.png - PUMPFUNVERSE carnival ticket with multiple characters
+
+### Flying Background Characters (NO BG = transparent background):
+- Swimming_FUN_Completed_NO_BG.png - Swimming character (right-to-left animation)
+- Upside_Down_FUN_Completed_NO_BG.png - Rocket/upside down character (left-to-right)
+- Another_Roller_Coaster_FUN_Completed_NO_BG.png - Roller coaster character (diagonal)
+- Flying_Fun_Completed_NO_BG.png - General flying character (floating)
+
+### Menu Hanging Characters:
+- Rope_Fun_Completed_NO_BG.png - Character hanging from rope
+- Roller_Coaster_FUN_Completed_NO_BG.png - Alternative menu hanger
+
+### Content Section Characters:
+- Shocked_FUN_Completed_NO_BG.png - Shocked expression character
+- Vomitting_FUN_Completed_NO_BG.png - Rainbow/vomiting character  
+- Statue_FUN_Completed_NO_BG.png - Static statue character
+
+### UI/Theme Elements:
+- Pumpfun.jpg - Main logo/branding
+- Paint_brush.jpg - Decorative paint brush element
+- Hand_drawing.jpg - Custom cursor image
+
+## Developer Note:
+The website is built with proper HTML structure and CSS classes for all these images.
+The client will replace these placeholder references with actual image files.
+All animations and positioning are already implemented and ready to work with the images.

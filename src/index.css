@@ -1,0 +1,958 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FUN MEMECOIN MS PAINT DESIGN SYSTEM
+All colors are HSL for perfect theming
+*/
+
+@layer base {
+  :root {
+    /* FUN Memecoin Brand Colors */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 148 74% 13%; /* Dark green text */
+
+    /* Core FUN Brand Palette */
+    --fun-clear-green: 155 65% 57%; /* #48E2A4 - Main buttons */
+    --fun-mid-green: 166 72% 31%; /* #148A72 - Shading */
+    --fun-dark-green: 158 61% 18%; /* #1B453B - Outlines */
+    --fun-white: 0 0% 100%; /* #FFFFFF - Background */
+
+    /* MS Paint Aesthetic Colors */
+    --paint-red: 0 100% 50%; /* Classic MS Paint red */
+    --paint-blue: 240 100% 50%; /* Classic MS Paint blue */
+    --paint-yellow: 60 100% 50%; /* Classic MS Paint yellow */
+
+    /* Component Colors mapped to FUN brand */
+    --primary: 155 65% 57%; /* Clear Green */
+    --primary-foreground: 0 0% 100%; /* White text on green */
+
+    --secondary: 166 72% 31%; /* Mid-Dark Green */
+    --secondary-foreground: 0 0% 100%; /* White text */
+
+    --accent: 158 61% 18%; /* Dark Green */
+    --accent-foreground: 0 0% 100%; /* White text */
+
+    --muted: 155 20% 90%; /* Light green tint */
+    --muted-foreground: 158 61% 18%; /* Dark green text */
+
+    --destructive: 0 100% 50%; /* Paint red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 158 61% 18%; /* Dark green borders */
+    --input: 155 20% 95%; /* Very light green */
+    --ring: 155 65% 57%; /* Clear green focus */
+
+    --radius: 0.25rem; /* MS Paint sharp corners */
+
+    /* Custom FUN Animation Curves */
+    --bounce-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --chaotic-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark mode maintains FUN brand colors */
+  .dark {
+    --background: 0 0% 100%; /* Keep white background for MS Paint feel */
+    --foreground: 158 61% 18%; /* Dark green text */
+    
+    /* Maintain brand consistency in dark mode */
+    --primary: 155 65% 57%;
+    --secondary: 166 72% 31%;
+    --accent: 158 61% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'VT323', 'VCR OSD Mono', monospace;
+    cursor: url('/images/Hand_drawing-removebg-preview.png') 16 16, pointer;
+  }
+
+  * {
+    cursor: url('/images/Hand_drawing-removebg-preview.png') 16 16, pointer;
+  }
+
+  button, a, [role="button"] {
+    cursor: url('/images/Hand_drawing-removebg-preview.png') 16 16, pointer;
+  }
+
+  input, textarea, select {
+    cursor: url('/images/Hand_drawing-removebg-preview.png') 16 16, text;
+  }
+
+  /* MS Paint Typography System */
+  .font-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 400;
+  }
+
+  .font-body {
+    font-family: 'VT323', 'VCR OSD Mono', monospace;
+    font-weight: 400;
+  }
+
+  /* Tilted Rectangle Backgrounds */
+  .tilted-bg-primary {
+    background: hsl(var(--fun-clear-green));
+    transform: skew(-5deg);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: 2px solid hsl(var(--fun-dark-green));
+  }
+
+  .tilted-bg-secondary {
+    background: hsl(var(--fun-mid-green));
+    transform: skew(-3deg);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: 2px solid hsl(var(--fun-dark-green));
+  }
+
+  /* MS Paint Button Style */
+  .ms-paint-button {
+    background: hsl(var(--fun-clear-green));
+    border: 3px outset hsl(var(--fun-clear-green));
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: hsl(var(--fun-dark-green));
+    border-bottom-color: hsl(var(--fun-dark-green));
+    padding: 0.5rem 1rem;
+    font-family: 'VT323', monospace;
+    color: white;
+    cursor: url('/images/Hand drawing.jpg'), pointer;
+    transition: all 0.1s ease;
+  }
+
+  .ms-paint-button:hover {
+    background: hsl(var(--fun-mid-green));
+    transform: translateY(1px);
+  }
+
+  .ms-paint-button:active {
+    border-style: inset;
+    transform: translateY(2px);
+  }
+}
+
+/* FUN Character Animation System */
+@layer components {
+  /* Continuous Flying Animations */
+  .flying-animation {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .right-to-left {
+    animation: flyRightToLeft 15s linear infinite;
+    top: 20%;
+    max-width: 160px;
+    max-height: 160px;
+  }
+
+  .left-to-right {
+    animation: flyLeftToRight 18s linear infinite;
+    top: 40%;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .diagonal {
+    animation: flyDiagonal 20s linear infinite;
+    top: 60%;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .floating-animation {
+    animation: float 8s ease-in-out infinite;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    z-index: 5;
+  }
+
+  .coaster-float {
+    animation: coasterFloat 12s ease-in-out infinite;
+    position: fixed;
+    top: 70%;
+    left: 5%;
+    z-index: 5;
+  }
+
+  .rope-float {
+    animation: ropeFloat 10s ease-in-out infinite;
+    position: fixed;
+    top: 30%;
+    left: 15%;
+    z-index: 5;
+  }
+
+  /* Menu Hanging Characters */
+  .menu-hanger {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: swing 3s ease-in-out infinite;
+    z-index: 20;
+  }
+
+  /* Content Characters */
+  .content-character {
+    position: absolute;
+    animation: bounce 4s ease-in-out infinite;
+  }
+
+  .shocked {
+    top: 20px;
+    right: -60px;
+    animation-delay: -1s;
+  }
+
+  .rainbow {
+    bottom: 20px;
+    left: -60px;
+    animation-delay: -2s;
+  }
+
+  .statue {
+    top: 50%;
+    right: 20px;
+    animation: none;
+    transform: translateY(-50%);
+  }
+
+  /* Copy Tool Styling */
+  .copy-tool {
+    background: hsl(var(--fun-clear-green));
+    border: 3px solid hsl(var(--fun-dark-green));
+    color: white;
+    font-family: 'VT323', monospace;
+    padding: 1rem;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .copy-tool::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: hsl(var(--fun-dark-green));
+    z-index: -1;
+  }
+
+  /* MS Paint Image Effects */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .hero-image {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(4px 4px 0px hsl(var(--fun-dark-green)));
+  }
+
+  /* FUN on the PUMP Section Styles */
+  .fun-on-pump-section {
+    background-color: white;
+    font-family: 'VT323', 'Courier New', monospace;
+  }
+
+  .fun-on-pump-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .fun-text {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-size: 10rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  /* Apply Caprasimo to all FUN and PUMP words throughout the site */
+  .tilted-bg-secondary,
+  .tilted-bg-primary {
+    font-family: "Caprasimo", serif !important;
+    font-weight: 400 !important;
+  }
+
+  /* Target specific FUN and PUMP text elements */
+  .font-title {
+    font-family: "Caprasimo", serif !important;
+    font-weight: 400 !important;
+  }
+
+  /* Override for any text containing FUN or PUMP */
+  span:contains("FUN"),
+  span:contains("PUMP"),
+  .fun-highlight {
+    font-family: "Caprasimo", serif !important;
+    font-weight: 400 !important;
+  }
+
+  .bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+  }
+
+  .on-the-box {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #000000;
+    background-color: #00FF00;
+    padding: 15px 30px;
+    text-transform: lowercase;
+    transform: skew(-8deg);
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+  }
+
+  .pump-text {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-size: 10rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Responsive Design for FUN on the PUMP */
+  @media (max-width: 768px) {
+    .fun-text,
+    .pump-text {
+      font-size: 7.5rem;
+    }
+    
+    .on-the-box {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .fun-text,
+    .pump-text {
+      font-size: 6rem;
+    }
+    
+    .on-the-box {
+      font-size: 2rem;
+    }
+  }
+
+  .theme-decoration {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* MS Paint Window Styles */
+  .ms-paint-window {
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .ms-paint-titlebar {
+    background: linear-gradient(to right, #000080, #0000ff);
+    color: white;
+    padding: 2px 4px;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+  }
+
+  .ms-paint-titlebar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ms-paint-title {
+    font-weight: bold;
+  }
+
+  .ms-paint-controls {
+    display: flex;
+    gap: 2px;
+  }
+
+  .ms-paint-button-small {
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+  }
+
+  .ms-paint-menubar {
+    background: #c0c0c0;
+    border-bottom: 1px inset #c0c0c0;
+    padding: 2px 4px;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 11px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .ms-paint-menu-item {
+    cursor: pointer;
+    padding: 1px 4px;
+  }
+
+  .ms-paint-menu-item:hover {
+    background: #000080;
+    color: white;
+  }
+
+  .ms-paint-content {
+    display: flex;
+    background: #c0c0c0;
+  }
+
+  .ms-paint-toolbar {
+    background: #c0c0c0;
+    border-right: 1px inset #c0c0c0;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 40px;
+  }
+
+  .ms-paint-tool {
+    width: 24px;
+    height: 24px;
+    background: #c0c0c0;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+  }
+
+  .ms-paint-canvas {
+    background: white;
+    border: 1px inset #c0c0c0;
+    flex: 1;
+    padding: 4px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ms-paint-image {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .ms-paint-palette {
+    background: #c0c0c0;
+    border-top: 1px inset #c0c0c0;
+    padding: 4px;
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+
+  .ms-paint-color {
+    width: 16px;
+    height: 16px;
+    border: 1px outset #c0c0c0;
+    cursor: pointer;
+  }
+
+  .ms-paint-color:nth-child(1) { background: #000000; }
+  .ms-paint-color:nth-child(2) { background: #808080; }
+  .ms-paint-color:nth-child(3) { background: #c0c0c0; }
+  .ms-paint-color:nth-child(4) { background: #ffffff; }
+  .ms-paint-color:nth-child(5) { background: #800000; }
+  .ms-paint-color:nth-child(6) { background: #ff0000; }
+  .ms-paint-color:nth-child(7) { background: #800080; }
+  .ms-paint-color:nth-child(8) { background: #ff00ff; }
+  .ms-paint-color:nth-child(9) { background: #008000; }
+  .ms-paint-color:nth-child(10) { background: #00ff00; }
+  .ms-paint-color:nth-child(11) { background: #808000; }
+  .ms-paint-color:nth-child(12) { background: #ffff00; }
+  .ms-paint-color:nth-child(13) { background: #000080; }
+  .ms-paint-color:nth-child(14) { background: #0000ff; }
+  .ms-paint-color:nth-child(15) { background: #008080; }
+  .ms-paint-color:nth-child(16) { background: #00ffff; }
+
+  /* Pixelated Text Styles */
+  .pixelated-text-large {
+    font-family: 'VT323', 'Courier New', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .pixelated-text-medium {
+    font-family: 'VT323', 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Decorative Elements */
+  .decorative-shape {
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  /* Content Section Styles */
+  .bucky-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+
+  .instruction-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .green-accent-1 {
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  .green-accent-2 {
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  /* Pill Styles */
+  .pill-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  .pill-capsule {
+    display: flex;
+    border: 2px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: rotate(-5deg);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+  }
+
+  .pill-capsule::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid #000;
+    border-radius: 22px;
+    transform: rotate(-5deg);
+    z-index: -1;
+  }
+
+  .pill-left,
+  .pill-right {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+  }
+
+  .pill-text-left {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  .pill-text-right {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .pumpfun-image-container {
+    margin-top: 16px;
+  }
+
+  .pump-logo {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* PUMPFUNIVERSE Section Styles */
+  .pumpfuniverse-section {
+    background-color: white;
+    font-family: 'VT323', 'Courier New', monospace;
+  }
+
+  .hero-character-image {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+    margin-bottom: 20px;
+  }
+
+  .landscape-left-rotated {
+    transform: rotate(-90deg);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-top: -20px;
+  }
+
+  .social-logo-container {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+  }
+
+  .social-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .contract-copy-tool {
+    background-color: #00FF00;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+  }
+
+  .contract-address-text {
+    font-family: "VT323", monospace;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    flex: 1;
+    margin-right: 12px;
+  }
+
+  .copy-icon-button {
+    background: none;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+  }
+
+  .copy-icon-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+  }
+
+  .copy-icon-button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+  }
+
+  .hanging-rope-fun {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
+    animation: ropeFloat 3s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  @keyframes ropeFloat {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0px) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-8px) rotate(5deg);
+    }
+  }
+
+  .main-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 30px 0;
+    text-align: center;
+    font-family: 'VT323', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  }
+
+  .character-intro {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .intro-text {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+    font-family: 'VT323', 'Courier New', monospace;
+    font-weight: bold;
+  }
+
+  .fun-highlight {
+    color: #00CED1;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  }
+
+  .description {
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  .description-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: 'VT323', 'Courier New', monospace;
+    font-weight: normal;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .main-heading {
+      font-size: 2.5rem;
+    }
+    
+    .intro-text {
+      font-size: 1.5rem;
+    }
+    
+    .description-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 2rem;
+    }
+    
+    .intro-text {
+      font-size: 1.3rem;
+    }
+    
+    .arch-character {
+      height: 60px;
+      top: -30px;
+    }
+    
+    .description-text {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Keyframe Animations */
+@keyframes flyRightToLeft {
+  0% { left: 100%; }
+  100% { left: -200px; }
+}
+
+@keyframes flyLeftToRight {
+  0% { left: -200px; }
+  100% { left: 100%; }
+}
+
+@keyframes flyDiagonal {
+  0% { 
+    left: 100%; 
+    top: 70%; 
+  }
+  100% { 
+    left: -200px; 
+    top: 10%; 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+@keyframes coasterFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(-10deg); 
+  }
+  25% { 
+    transform: translateY(-15px) rotate(-5deg); 
+  }
+  50% { 
+    transform: translateY(-25px) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(-15px) rotate(5deg); 
+  }
+}
+
+@keyframes ropeFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(15deg); 
+  }
+  33% { 
+    transform: translateY(-10px) rotate(10deg); 
+  }
+  66% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+@keyframes swing {
+  0%, 100% { 
+    transform: translateX(-50%) rotate(-5deg); 
+  }
+  50% { 
+    transform: translateX(-50%) rotate(5deg); 
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .flying-animation {
+    width: 60px;
+    height: auto;
+  }
+  
+  .menu-hanger {
+    width: 40px;
+    height: auto;
+  }
+  
+  .content-character {
+    width: 50px;
+    height: auto;
+  }
+  
+  .floating-animation,
+  .coaster-float,
+  .rope-float {
+    width: 40px;
+    height: auto;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .right-to-left { animation-duration: 20s; }
+  .left-to-right { animation-duration: 25s; }
+  .diagonal { animation-duration: 30s; }
+  
+  /* Hide some decorative elements on very small screens */
+  @media (max-width: 480px) {
+    .coaster-float,
+    .rope-float {
+      display: none;
+    }
+    
+    .content-character.shocked,
+    .content-character.rainbow {
+      width: 30px;
+      height: auto;
+    }
+  }
+}
