@@ -167,7 +167,7 @@ const Index = () => {
            <img
              src="/images/Swimming FUN Completed NO BG.png"
              alt="Swimming Fun"
-             className="flying-fun-animation absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
+             className="swimming-fun-animation absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
            />
            <div className="max-w-7xl mx-auto px-6 py-16 text-center relative z-20">
              {/* FUN Character Image */}

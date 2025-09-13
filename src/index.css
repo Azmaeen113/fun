@@ -329,6 +329,15 @@ Enhanced with sophisticated retro colors and modern typography
     will-change: transform, left;
   }
 
+  .swimming-fun-animation {
+    /* swimming moves left to right */
+    animation: flyLeftToRight 5.5s linear infinite;
+    filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.35));
+    /* ensure the swimming element sits above entrance photo */
+    z-index: 30;
+    will-change: transform, left;
+  }
+
   /* Ensure the flying image keeps a consistent, non-responsive pixel size
      so it doesn't shrink on smaller screens. Use a gentle clamp for very
      small devices to avoid overflow. */
@@ -338,8 +347,17 @@ Enhanced with sophisticated retro colors and modern typography
     height: auto !important;
   }
 
+  .swimming-fun-animation {
+    width: 320px; /* fixed visual size */
+    max-width: none !important;
+    height: auto !important;
+  }
+
   @media (max-width: 480px) {
     .flying-fun-animation {
+      width: 240px; /* slightly smaller on very small screens */
+    }
+    .swimming-fun-animation {
       width: 240px; /* slightly smaller on very small screens */
     }
   }
@@ -1593,6 +1611,10 @@ Enhanced with sophisticated retro colors and modern typography
     width: 80px;
     height: auto;
   }
+  .swimming-fun-animation {
+    width: 80px;
+    height: auto;
+  }
   
   .dex-logo {
     width: 240px;
@@ -1742,6 +1764,10 @@ Enhanced with sophisticated retro colors and modern typography
       width: 40px;
       height: auto;
     }
+    .swimming-fun-animation {
+      width: 40px;
+      height: auto;
+    }
     
     .dex-logo {
       width: 120px;
@@ -1808,6 +1834,10 @@ Enhanced with sophisticated retro colors and modern typography
 @media (max-width: 1024px) {
   /* Tablet adjustments */
   .flying-fun-animation {
+    width: 80px;
+    height: auto;
+  }
+  .swimming-fun-animation {
     width: 80px;
     height: auto;
   }
