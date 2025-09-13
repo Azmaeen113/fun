@@ -83,8 +83,8 @@ const Index = () => {
               />
             </div>
           </nav>
-          {/* Mobile hamburger (shuttering nav) */}
-          <div className="sm:hidden flex items-center">
+          {/* Mobile hamburger (shuttering nav) - moved to top-right on mobile */}
+          <div className="sm:hidden absolute right-4 top-4">
             <button
               aria-label="Open menu"
               aria-expanded={mobileNavOpen}
@@ -224,26 +224,31 @@ const Index = () => {
               </h3>
             </div>
             
-            <div className="flex items-center justify-center space-x-4 flex-wrap gap-4">
-              <span className="font-title text-2xl lg:text-4xl text-fun-charcoal">I'm the</span>
-              <span className="tilted-bg-secondary text-white px-4 py-2 font-title text-2xl lg:text-4xl">FUN</span>
-              <span className="font-title text-2xl lg:text-4xl text-fun-charcoal">of the</span>
-              <span className="tilted-bg-primary text-white px-4 py-2 font-title text-2xl lg:text-4xl">PUMP</span>
+            <div className="flex items-center justify-center flex-wrap gap-4">
+              <div className="fun-on-pump-large">
+                <h1 className="font-black text-black tracking-wide">I'm the</h1>
+                <h1 className="font-black text-black tracking-wide">FUN</h1>
+                <h1 className="font-black text-black tracking-wide">of the</h1>
+                <span className="bg-bucky-green fun-pump-inline inline-block text-black">PUMP</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Enhanced Call to Action */}
         <section className="text-center mb-20 relative">
-          <div className="tilted-bg-primary inline-block mb-8 relative">
+          <div className="tilted-bg-primary inline-block mb-2">
             <h3 className="font-title text-4xl lg:text-6xl text-white px-6 py-4">
               GRAB YOUR TICKET TODAY!
             </h3>
-            {/* Hanging Shocked Fun Character (replaced per request) */}
-            <img 
-              src="/images/Shocked FUN Completed NO BG.png" 
-              alt="Shocked Fun Character" 
-              className="hanging-rope-fun"
+          </div>
+          {/* Place the shocked fun image underneath the banner and enlarge it ~2x */}
+          <div className="mb-6">
+            <img
+              src="/images/Shocked FUN Completed NO BG.png"
+              alt="Shocked Fun Character"
+              className="mx-auto block"
+              style={{ width: '200px', height: 'auto', imageRendering: 'pixelated' }}
             />
           </div>
 
@@ -275,11 +280,11 @@ const Index = () => {
 
           {/* Enhanced Paint Brush Decoration */}
           <div className="flex justify-center mb-12">
-            <img 
-              src="/images/Paint brush.jpg" 
-              alt="Paint Brush" 
-              className="theme-decoration brush w-40 h-auto animate-bounce transition-transform duration-300 hover:scale-110" 
-            />
+              <img 
+                src="/images/Paint brush.jpg" 
+                alt="Paint Brush" 
+                className="theme-decoration brush w-[112px] h-auto animate-bounce transition-transform duration-300 hover:scale-110" 
+              />
           </div>
 
           {/* Enhanced Social Links */}

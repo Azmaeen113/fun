@@ -400,6 +400,52 @@ Enhanced with sophisticated retro colors and modern typography
     z-index: 5;
   }
 
+  /* Mobile shutter panel behavior */
+  .mobile-shutter {
+    transition: height 300ms ease, opacity 250ms ease, transform 300ms ease;
+    height: 0;
+    opacity: 0;
+    transform-origin: top center;
+  }
+
+  .mobile-shutter.open {
+    height: 100vh; /* full viewport height when open */
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Ensure the mobile hamburger sits top-right and does not wrap */
+  @media (max-width: 640px) {
+    .site-header .max-w-7xl {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Scale down large social/sticker images for phones */
+    .social-logo-container img, .landscape-left-rotated, .hero-character-image {
+      max-width: 220px;
+      width: 90%;
+      height: auto;
+    }
+
+    /* Make the Paint brush (sticker) smaller on phones */
+    .theme-decoration.brush {
+      width: 80px !important;
+    }
+
+    /* Reduce size of DexScreener image on small screens */
+    .social-logo-container img.w-56 {
+      width: 160px;
+      height: auto;
+    }
+
+    /* Ensure fun-on-pump large reduces properly */
+    .fun-on-pump-large {
+      font-size: 2.2rem;
+    }
+  }
+
   .rope-float {
     animation: ropeFloat 10s ease-in-out infinite;
     position: fixed;
@@ -484,18 +530,33 @@ Enhanced with sophisticated retro colors and modern typography
   .hero-section-sprites {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    /* Raise sprite layer so decorative sprites appear above the FUN lettering */
+    z-index: 30;
     pointer-events: none;
   }
 
   /* FUN on the PUMP Section Styles */
   .fun-on-pump-section {
-    background-color: white;
+    /* Remove the opaque white block so floating sprites remain visible.
+       Keep the page's base (deepest) white background intact. */
+    background-color: transparent !important; /* removed the white overlay */
     font-family: 'VT323', 'Courier New', monospace;
     /* pull the section up slightly so the lettering sits just below the hero image with a small gap */
     margin-top: -2.25rem; /* smaller offset to create a little gap */
     position: relative;
-    z-index: 20;
+    /* Keep this below the sprite layer so sprites float visibly above text */
+    z-index: 10;
+  }
+
+  /* Force FUN lettering nodes to be transparent and remove any boxed backgrounds
+     so they won't occlude decorative floating sprites. We intentionally avoid
+     touching .bg-bucky-green (the bright "pump" block) so its styling remains. */
+  .fun-on-pump-section .fun-on-pump-large,
+  .fun-on-pump-section .fun-on-pump-large h1,
+  .fun-on-pump-section .fun-on-pump-large span {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
 
   .fun-on-pump-container {
@@ -563,11 +624,12 @@ Enhanced with sophisticated retro colors and modern typography
     display: inline-block;
     padding: 0.5rem 1.25rem;
     border: 6px solid #000; /* bold black outline like pixel art */
-    background: linear-gradient(135deg, hsl(var(--fun-golden-yellow)), hsl(var(--fun-coral-pink)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+  /* Keep the gradient text but don't apply an opaque background box that would cover sprites */
+  background: linear-gradient(135deg, hsl(var(--fun-golden-yellow)), hsl(var(--fun-coral-pink)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
     box-shadow: 6px 6px 0 rgba(0,0,0,0.35); /* offset shadow for depth */
     transform: skew(-6deg);
     image-rendering: pixelated;
