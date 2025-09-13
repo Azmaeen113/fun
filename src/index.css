@@ -1,54 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* FUN MEMECOIN MS PAINT DESIGN SYSTEM
-All colors are HSL for perfect theming
+/* FUN MEMECOIN MODERN RETRO DESIGN SYSTEM
+Enhanced with sophisticated retro colors and modern typography
 */
 
 @layer base {
   :root {
-    /* FUN Memecoin Brand Colors */
+    /* Enhanced FUN Memecoin Brand Colors */
     --background: 0 0% 100%; /* Pure white */
     --foreground: 148 74% 13%; /* Dark green text */
 
-    /* Core FUN Brand Palette */
+    /* Sophisticated Retro Color Palette */
+    --fun-mint-green: 160 85% 65%; /* #4FD1C7 - Modern mint */
+    --fun-coral-pink: 12 85% 70%; /* #FF8A80 - Coral accent */
+    --fun-cream-white: 45 25% 95%; /* #F7F5F3 - Warm cream */
+    --fun-sage-green: 140 25% 45%; /* #6B8E6B - Sage green */
+    --fun-deep-teal: 180 45% 25%; /* #2D5A5A - Deep teal */
+    --fun-golden-yellow: 45 85% 65%; /* #FFD54F - Golden yellow */
+    --fun-lavender: 260 35% 75%; /* #B39DDB - Soft lavender */
+    --fun-charcoal: 220 15% 20%; /* #37474F - Charcoal gray */
+
+    /* Core FUN Brand Palette (Enhanced) */
     --fun-clear-green: 155 65% 57%; /* #48E2A4 - Main buttons */
     --fun-mid-green: 166 72% 31%; /* #148A72 - Shading */
     --fun-dark-green: 158 61% 18%; /* #1B453B - Outlines */
     --fun-white: 0 0% 100%; /* #FFFFFF - Background */
 
-    /* MS Paint Aesthetic Colors */
+    /* MS Paint Aesthetic Colors (Enhanced) */
     --paint-red: 0 100% 50%; /* Classic MS Paint red */
     --paint-blue: 240 100% 50%; /* Classic MS Paint blue */
     --paint-yellow: 60 100% 50%; /* Classic MS Paint yellow */
 
-    /* Component Colors mapped to FUN brand */
-    --primary: 155 65% 57%; /* Clear Green */
-    --primary-foreground: 0 0% 100%; /* White text on green */
+    /* Enhanced Component Colors */
+    --primary: 160 85% 65%; /* Modern mint green */
+    --primary-foreground: 220 15% 20%; /* Charcoal text */
 
-    --secondary: 166 72% 31%; /* Mid-Dark Green */
+    --secondary: 140 25% 45%; /* Sage green */
     --secondary-foreground: 0 0% 100%; /* White text */
 
-    --accent: 158 61% 18%; /* Dark Green */
+    --accent: 12 85% 70%; /* Coral pink accent */
     --accent-foreground: 0 0% 100%; /* White text */
 
-    --muted: 155 20% 90%; /* Light green tint */
-    --muted-foreground: 158 61% 18%; /* Dark green text */
+    --muted: 45 25% 95%; /* Warm cream */
+    --muted-foreground: 220 15% 20%; /* Charcoal text */
 
     --destructive: 0 100% 50%; /* Paint red */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 158 61% 18%; /* Dark green borders */
-    --input: 155 20% 95%; /* Very light green */
-    --ring: 155 65% 57%; /* Clear green focus */
+    --border: 180 45% 25%; /* Deep teal borders */
+    --input: 45 25% 95%; /* Warm cream input */
+    --ring: 160 85% 65%; /* Mint green focus */
 
-    --radius: 0.25rem; /* MS Paint sharp corners */
+    --radius: 0.5rem; /* Modern rounded corners */
 
-    /* Custom FUN Animation Curves */
+    /* Enhanced Animation Curves */
     --bounce-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
     --chaotic-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --spring-ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --gentle-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* Typography Scale */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+    --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+    --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);
+    --text-6xl: clamp(3.75rem, 3rem + 3.75vw, 4.5rem);
 
     --sidebar-background: 0 0% 98%;
 
@@ -113,57 +139,111 @@ All colors are HSL for perfect theming
     cursor: url('/images/Hand_drawing-removebg-preview.png'), text;
   }
 
-  /* MS Paint Typography System */
+  /* Modern Retro Typography System */
   .font-title {
-    font-family: 'Luckiest Guy', cursive;
-    font-weight: 400;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   .font-body {
-    font-family: 'VT323', 'VCR OSD Mono', monospace;
+    font-family: 'Inter', 'Nunito Sans', sans-serif;
     font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
 
-  /* Tilted Rectangle Backgrounds */
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  .font-accent {
+    font-family: 'Nunito Sans', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  /* Enhanced Tilted Rectangle Backgrounds */
   .tilted-bg-primary {
-    background: hsl(var(--fun-clear-green));
-    transform: skew(-5deg);
-    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-clear-green)));
+    transform: skew(-3deg);
+    padding: 0.75rem 1.5rem;
     display: inline-block;
-    border: 2px solid hsl(var(--fun-dark-green));
+    border: 3px solid hsl(var(--fun-deep-teal));
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s var(--smooth-ease);
+  }
+
+  .tilted-bg-primary:hover {
+    transform: skew(-3deg) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 
   .tilted-bg-secondary {
-    background: hsl(var(--fun-mid-green));
-    transform: skew(-3deg);
-    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, hsl(var(--fun-sage-green)), hsl(var(--fun-mid-green)));
+    transform: skew(-2deg);
+    padding: 0.75rem 1.5rem;
     display: inline-block;
-    border: 2px solid hsl(var(--fun-dark-green));
+    border: 3px solid hsl(var(--fun-deep-teal));
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s var(--smooth-ease);
   }
 
-  /* MS Paint Button Style */
+  .tilted-bg-secondary:hover {
+    transform: skew(-2deg) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced MS Paint Button Style */
   .ms-paint-button {
-    background: hsl(var(--fun-clear-green));
-    border: 3px outset hsl(var(--fun-clear-green));
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: hsl(var(--fun-dark-green));
-    border-bottom-color: hsl(var(--fun-dark-green));
-    padding: 0.5rem 1rem;
-    font-family: 'VT323', monospace;
-    color: white;
+    background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-clear-green)));
+    border: 3px solid hsl(var(--fun-deep-teal));
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: hsl(var(--fun-charcoal));
     cursor: url('/images/Hand_drawing-removebg-preview.png'), pointer;
-    transition: all 0.1s ease;
+    transition: all 0.3s var(--smooth-ease);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ms-paint-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s var(--smooth-ease);
   }
 
   .ms-paint-button:hover {
-    background: hsl(var(--fun-mid-green));
-    transform: translateY(1px);
+    background: linear-gradient(135deg, hsl(var(--fun-clear-green)), hsl(var(--fun-mint-green)));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .ms-paint-button:hover::before {
+    left: 100%;
   }
 
   .ms-paint-button:active {
-    border-style: inset;
-    transform: translateY(2px);
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -312,35 +392,59 @@ All colors are HSL for perfect theming
   }
 
   .fun-text {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-size: 6rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: var(--text-6xl);
     color: #000000;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
     text-align: center;
+    text-shadow: none;
+    background: none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #000000;
+    animation: none;
   }
 
-  /* Apply Caprasimo to all FUN and PUMP words throughout the site */
+  /* Enhanced FUN and PUMP text styling */
   .tilted-bg-secondary,
   .tilted-bg-primary {
-    font-family: "Caprasimo", serif !important;
-    font-weight: 400 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* Target specific FUN and PUMP text elements */
   .font-title {
-    font-family: "Caprasimo", serif !important;
-    font-weight: 400 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Override for any text containing FUN or PUMP */
-  span:contains("FUN"),
-  span:contains("PUMP"),
+  /* Enhanced FUN highlight styling */
   .fun-highlight {
-    font-family: "Caprasimo", serif !important;
-    font-weight: 400 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, hsl(var(--fun-golden-yellow)), hsl(var(--fun-coral-pink)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    color: hsl(var(--fun-golden-yellow)) !important;
+    -webkit-text-fill-color: hsl(var(--fun-golden-yellow)) !important;
+  }
+
+  /* FUN highlight within tilted backgrounds */
+  .tilted-bg-primary .fun-highlight,
+  .tilted-bg-secondary .fun-highlight {
+    color: hsl(var(--fun-golden-yellow)) !important;
+    -webkit-text-fill-color: hsl(var(--fun-golden-yellow)) !important;
+    background: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .bottom-line {
@@ -352,25 +456,39 @@ All colors are HSL for perfect theming
   }
 
   .on-the-box {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-2xl);
     color: #000000;
     background-color: #40E0D0;
-    padding: 8px 16px;
+    padding: 12px 20px;
     text-transform: lowercase;
     transform: skew(-8deg);
-    border: 2px solid #000;
+    border: 2px solid #000000;
+    border-radius: 0;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    transition: none;
+  }
+
+  .on-the-box:hover {
+    transform: skew(-8deg);
     box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
   }
 
   .pump-text {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-size: 6rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: var(--text-6xl);
     color: #000000;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+    text-shadow: none;
+    background: none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #000000;
+    animation: none;
   }
 
   /* Responsive Design for FUN on the PUMP */
@@ -724,43 +842,84 @@ All colors are HSL for perfect theming
   }
 
   .contract-copy-tool {
-    background-color: #00FF00;
-    border-radius: 12px;
-    padding: 16px 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-clear-green)));
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 3px solid hsl(var(--fun-deep-teal));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s var(--smooth-ease);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contract-copy-tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s var(--smooth-ease);
+  }
+
+  .contract-copy-tool:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .contract-copy-tool:hover::before {
+    left: 100%;
   }
 
   .contract-address-text {
-    font-family: "VT323", monospace;
-    font-size: 1.1rem;
-    color: #000;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-base);
+    color: hsl(var(--fun-charcoal));
+    font-weight: 600;
+    letter-spacing: 0.02em;
     flex: 1;
-    margin-right: 12px;
+    margin-right: 16px;
+    line-height: 1.4;
   }
 
   .copy-icon-button {
-    background: none;
-    border: 2px solid #000;
-    border-radius: 6px;
-    padding: 8px 12px;
+    background: hsl(var(--fun-cream-white));
+    border: 3px solid hsl(var(--fun-deep-teal));
+    border-radius: 12px;
+    padding: 12px 16px;
     cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.2s ease;
-    background-color: white;
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    font-size: var(--text-lg);
+    transition: all 0.3s var(--smooth-ease);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .copy-icon-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 209, 199, 0.3), transparent);
+    transition: left 0.4s var(--smooth-ease);
   }
 
   .copy-icon-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: hsl(var(--fun-mint-green));
+  }
+
+  .copy-icon-button:hover::before {
+    left: 100%;
   }
 
   .copy-icon-button:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
   .hanging-rope-fun {
@@ -788,48 +947,63 @@ All colors are HSL for perfect theming
   }
 
   .main-heading {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
-    margin: 30px 0;
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    color: hsl(var(--fun-charcoal));
+    margin: 40px 0;
     text-align: center;
-    font-family: 'VT323', 'Courier New', monospace;
+    font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-coral-pink)), hsl(var(--fun-golden-yellow)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: headingPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes headingPulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px rgba(79, 209, 199, 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 20px rgba(255, 138, 128, 0.4));
+    }
   }
 
   .character-intro {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .intro-text {
-    font-size: 1.8rem;
-    color: #333;
+    font-size: var(--text-2xl);
+    color: hsl(var(--fun-charcoal));
     margin: 0;
-    font-family: 'VT323', 'Courier New', monospace;
-    font-weight: bold;
-  }
-
-  .fun-highlight {
-    color: #00CED1;
-    font-weight: bold;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
   }
 
   .description {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .description-text {
-    font-size: 1.2rem;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-family: 'VT323', 'Courier New', monospace;
-    font-weight: normal;
+    font-size: var(--text-lg);
+    color: hsl(var(--fun-charcoal));
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    opacity: 0.9;
   }
 
   /* Responsive Design */
@@ -867,7 +1041,7 @@ All colors are HSL for perfect theming
   }
 }
 
-/* Keyframe Animations */
+/* Enhanced Keyframe Animations */
 @keyframes flyRightToLeft {
   0% { left: 100%; }
   100% { left: -200px; }
@@ -943,14 +1117,171 @@ All colors are HSL for perfect theming
   }
 }
 
-/* Responsive Adjustments */
+/* Modern Text Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--smooth-ease);
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s var(--smooth-ease);
+}
+
+.animate-on-scroll-left.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s var(--smooth-ease);
+}
+
+.animate-on-scroll-right.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-on-scroll-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s var(--smooth-ease);
+}
+
+.animate-on-scroll-scale.animated {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Modern CSS Utilities */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-coral-pink)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-medium {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-strong {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet adjustments */
+  .flying-fun-animation {
+    width: 80px;
+    height: auto;
+  }
+  
+  .dex-logo {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .twitter-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .main-heading {
+    font-size: var(--text-4xl);
+  }
+  
+  .intro-text {
+    font-size: var(--text-xl);
+  }
+  
+  .description-text {
+    font-size: var(--text-base);
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobile adjustments */
   .flying-animation {
     width: 60px;
     height: auto;
   }
 
-  
   .menu-hanger {
     width: 40px;
     height: auto;
@@ -973,6 +1304,85 @@ All colors are HSL for perfect theming
   .left-to-right { animation-duration: 25s; }
   .diagonal { animation-duration: 30s; }
   
+  /* Mobile header adjustments */
+  header .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  nav .relative {
+    margin: 0.5rem;
+  }
+  
+  /* Social logos mobile sizing */
+  .dex-logo {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .twitter-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Contract address mobile */
+  .contract-copy-tool {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  /* Paint brush mobile */
+  .theme-decoration.brush {
+    width: 24px;
+    height: auto;
+  }
+  
+  /* FUN on the PUMP mobile layout */
+  .fun-on-pump-container .flex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .fun-text, .pump-text {
+    font-size: var(--text-4xl);
+  }
+  
+  .on-the-box {
+    font-size: var(--text-lg);
+    padding: 6px 12px;
+  }
+  
+  /* Landscape image mobile */
+  .landscape-left-rotated {
+    max-width: 200px;
+    margin: 1rem auto;
+  }
+  
+  /* Hanging rope fun mobile */
+  .hanging-rope-fun {
+    width: 60px;
+    height: auto;
+  }
+  
+  /* Typography mobile */
+  .main-heading {
+    font-size: var(--text-3xl);
+  }
+  
+  .intro-text {
+    font-size: var(--text-lg);
+  }
+  
+  .description-text {
+    font-size: var(--text-sm);
+  }
+  
   /* Hide some decorative elements on very small screens */
   @media (max-width: 480px) {
     .coaster-float,
@@ -984,6 +1394,70 @@ All colors are HSL for perfect theming
     .content-character.rainbow {
       width: 30px;
       height: auto;
+    }
+    
+    .flying-fun-animation {
+      width: 40px;
+      height: auto;
+    }
+    
+    .dex-logo {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .twitter-logo {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .menu-hanger {
+      width: 24px;
+      height: auto;
+    }
+    
+    .fun-text, .pump-text {
+      font-size: var(--text-3xl);
+    }
+    
+    .on-the-box {
+      font-size: var(--text-base);
+      padding: 4px 8px;
+    }
+    
+    /* Stack social links vertically on very small screens */
+    .flex.justify-center.space-x-8 {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    /* Contract address very small */
+    .contract-copy-tool {
+      padding: 8px 12px;
+      font-size: 0.8rem;
+    }
+    
+    /* Hero image mobile */
+    .hero-image {
+      max-width: 250px;
+    }
+    
+    /* PUMPFUNIVERSE character mobile */
+    .hero-character-image {
+      max-width: 200px;
+    }
+    
+    /* Typography very small */
+    .main-heading {
+      font-size: var(--text-2xl);
+    }
+    
+    .intro-text {
+      font-size: var(--text-base);
+    }
+    
+    .description-text {
+      font-size: var(--text-xs);
     }
   }
 }
