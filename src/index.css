@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -609,7 +610,28 @@ Enhanced with sophisticated retro colors and modern typography
   .mobile-shutter .ms-paint-button {
     display: block;
     width: 100%;
-    text-align: left;
+    text-align: center;
+    font-size: 1.125rem;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Mobile image responsiveness */
+  @media (max-width: 768px) {
+    .landscape-left-rotated {
+      max-width: 90vw !important;
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .landscape-left-rotated {
+      max-width: 95vw !important;
+      width: 100% !important;
+      height: auto !important;
+    }
   }
 
   .fun-text {
@@ -1088,6 +1110,15 @@ Enhanced with sophisticated retro colors and modern typography
     image-rendering: crisp-edges !important;
     font-weight: normal !important;
     color: #000000 !important;
+  }
+
+  /* Roboto font class */
+  .roboto-text {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
   }
 
   .hero-character-image {

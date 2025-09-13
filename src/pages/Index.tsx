@@ -108,9 +108,9 @@ const Index = () => {
       >
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col space-y-4">
-            <a href="#about" className="ms-paint-button">ABOUT</a>
-            <a href="#chart" className="ms-paint-button">CHART</a>
-            <a href="#follow" className="ms-paint-button">FOLLOW ON X</a>
+            <a href="#about" className="ms-paint-button text-lg py-3 px-4">ABOUT</a>
+            <a href="#chart" className="ms-paint-button text-lg py-3 px-4">CHART</a>
+            <a href="#follow" className="ms-paint-button text-lg py-3 px-4">FOLLOW ON X</a>
           </div>
         </div>
       </div>
@@ -133,14 +133,18 @@ const Index = () => {
            {/* FUN on the PUMP - placed in hero */}
            <div className="fun-on-pump-section mb-6 relative">
              <div className="max-w-7xl mx-auto px-6 py-6 text-center">
-               <div className="inline-block fun-on-pump-large">
-                 <h1 className="inline-block font-black text-black tracking-wide mr-4">FUN</h1>
-                 <span className="inline-block font-bold text-black mr-2">ON the</span>
-                 <img 
-                   src="/images/PUMP_pill_Painted-removebg-preview.png" 
-                   alt="PUMP" 
-                   className="inline-block transform rotate-3 w-32 h-auto"
-                 />
+               <div className="text-center">
+                 <div className="mb-6">
+                   <h1 className="font-black text-black tracking-wide text-6xl lg:text-8xl">FUN</h1>
+                 </div>
+                 <div className="flex items-center justify-center gap-4">
+                   <span className="font-bold text-black text-3xl lg:text-6xl">ON the</span>
+                   <img 
+                     src="/images/PUMP_pill_Painted-removebg-preview.png" 
+                     alt="PUMP" 
+                     className="transform rotate-3 w-32 h-auto" 
+                   />
+                 </div>
                </div>
              </div>
            </div>
@@ -174,19 +178,19 @@ const Index = () => {
                <div className="bg-white border-4 border-fun-teal rounded-2xl shadow-lg overflow-hidden">
                  {/* Green Banner Title */}
                  <div className="tilted-bg-primary">
-                   <h2 className="ms-paint-button text-2xl lg:text-3xl text-white px-6 py-4 text-center">
+                   <h2 className="font-title text-2xl lg:text-3xl text-white px-6 py-4 pixelated-title text-center">
                      My name is <span className="fun-highlight">FUN</span>, the guy of the pump!
                    </h2>
                  </div>
                  
                  {/* Box Content */}
                  <div className="p-8">
-                   <p className="ms-paint-button text-base mb-4">
-                     PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jets popping activities.
-                   </p>
-                   <p className="ms-paint-button text-base">
-                     Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable desens, or hanging out at the DEXSCREENER arena for PvP plays.
-                   </p>
+                     <p className="roboto-text text-base lg:text-4xl mb-4">
+                       PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jeets popping activities.
+                     </p>
+                     <p className="roboto-text text-base lg:text-4xl">
+                       Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the DEXSCREENER arena for PvP plays.
+                     </p>
                  </div>
                </div>
              </div>
@@ -237,7 +241,12 @@ const Index = () => {
               src="/images/1000006803.png" 
               alt="Landscape Image" 
               className="landscape-left-rotated mx-auto w-full h-auto transition-transform duration-500 hover:scale-105" 
-              style={{ maxWidth: '20rem' }}
+              style={{ 
+                maxWidth: '20rem',
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
             />
           </div>
 
@@ -265,42 +274,46 @@ const Index = () => {
             />
           </div>
 
-          {/* Enhanced Social Links */}
-          <div className="flex justify-center space-x-8 lg:space-x-12 flex-col sm:flex-row gap-8">
-            <a 
-              href="https://dexscreener.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
-            >
-              <div className="social-logo-container">
-                <img 
-                  src="/images/dexscreener.avif" 
-                  alt="DexScreener" 
-                  className="w-56 h-56 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
-                />
-              </div>
-            </a>
-            
-            <a 
-              href="https://x.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
-            >
-              <div className="social-logo-container">
-                <img 
-                  src="/images/twitter (4).png" 
-                  alt="Twitter" 
-                  className="w-20 h-20 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
-                />
-              </div>
-            </a>
-          </div>
         </section>
+
       </main>
 
-      {/* Enhanced Footer */}
+      {/* Enhanced Social Links - Now first */}
+      <section className="py-12 bg-white text-center">
+        <div className="flex justify-center space-x-8 lg:space-x-12 flex-col sm:flex-row gap-8">
+          <a 
+            href="https://dexscreener.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
+          >
+            <div className="social-logo-container">
+              <img 
+                src="/images/dexscreener.avif" 
+                alt="DexScreener" 
+                className="w-56 h-56 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
+              />
+            </div>
+          </a>
+          
+          <a 
+            href="https://x.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
+          >
+            <div className="social-logo-container">
+              <img 
+                src="/images/twitter (4).png" 
+                alt="Twitter" 
+                className="w-20 h-20 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
+              />
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* Enhanced Footer - Now second */}
       <footer className="border-t-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-8 mt-16 shadow-lg">
         <div className="max-w-7xl mx-auto text-center">
            <p className="font-body text-base lg:text-lg text-fun-charcoal leading-relaxed max-w-4xl mx-auto pixelated-description">
