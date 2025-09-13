@@ -72,9 +72,14 @@ const Index = () => {
             </div>
             
             <div className="relative group">
-              <button className="ms-paint-button font-accent text-base">
+              <a 
+                href="https://x.com/FunGuyOfThePump" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="ms-paint-button font-accent text-base"
+              >
                 FOLLOW ON X
-              </button>
+              </a>
               <img
                 src="/images/Rope Fun Completed NO BG.png"
                 alt="Rope Fun"
@@ -110,7 +115,7 @@ const Index = () => {
           <div className="flex flex-col space-y-4">
             <a href="#about" className="ms-paint-button text-lg py-3 px-4">ABOUT</a>
             <a href="#chart" className="ms-paint-button text-lg py-3 px-4">CHART</a>
-            <a href="#follow" className="ms-paint-button text-lg py-3 px-4">FOLLOW ON X</a>
+            <a href="https://x.com/FunGuyOfThePump" target="_blank" rel="noopener noreferrer" className="ms-paint-button text-lg py-3 px-4">FOLLOW ON X</a>
           </div>
         </div>
       </div>
@@ -168,7 +173,7 @@ const Index = () => {
                />
                <div className="tilted-bg-primary inline-block mb-6">
                  <h1 className="font-title text-3xl lg:text-5xl text-white px-6 py-3 pixelated-title">
-                   WELCOME TO THE PUMPFUNIVERSE
+                   WELCOME TO THE PUMPFUNVERSE
                  </h1>
                </div>
              </div>
@@ -186,7 +191,7 @@ const Index = () => {
                  {/* Box Content */}
                  <div className="p-8">
                      <p className="roboto-text text-base lg:text-4xl mb-4">
-                       PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jeets popping activities.
+                       PUMPFUNVERSE is a large amusement park with candle jumping, swingers and jeets popping activities.
                      </p>
                      <p className="roboto-text text-base lg:text-4xl">
                        Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the DEXSCREENER arena for PvP plays.
@@ -209,10 +214,7 @@ const Index = () => {
             
             <div className="flex items-center justify-center flex-wrap gap-4">
               <div className="fun-on-pump-large">
-                <h1 className="font-black text-black tracking-wide">I'm the</h1>
-                <h1 className="font-black text-black tracking-wide">FUN</h1>
-                <h1 className="font-black text-black tracking-wide">of the</h1>
-                <span className="bg-bucky-green fun-pump-inline inline-block text-black">PUMP</span>
+                <h1 className="font-black text-black tracking-wide">I'm the FUN of the <img src="/images/PUMP_pill_Painted-removebg-preview.png" alt="PUMP" className="inline-block w-32 h-auto" /></h1>
               </div>
             </div>
           </div>
@@ -297,7 +299,7 @@ const Index = () => {
           </a>
           
           <a 
-            href="https://x.com" 
+            href="https://x.com/FunGuyOfThePump" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
