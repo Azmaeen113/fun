@@ -28,8 +28,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
 
-      {/* Enhanced Header with Modern Navigation */}
-      <header className="relative border-b-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-6 shadow-lg">
+      {/* Enhanced Header with Modern Navigation (now fixed) */}
+      <header className="fixed top-0 left-0 w-full border-b-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-6 shadow-lg z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-col lg:flex-row gap-6">
           {/* Logo */}
           <div className="flex items-center">
@@ -81,7 +81,8 @@ const Index = () => {
       </header>
 
        {/* Enhanced Main Content */}
-       <main className="max-w-7xl mx-auto px-6 py-12 relative">
+  {/* add top padding equal to header height so content is not hidden */}
+  <main className="max-w-7xl mx-auto px-6 pt-28 pb-12 relative">
          {/* Hero Section with FUN Character */}
          <section className="text-center mb-16 relative">
            <div className="mb-12">
@@ -109,12 +110,12 @@ const Index = () => {
 
          {/* Enhanced PUMPFUNIVERSE Section */}
          <section className="pumpfuniverse-section mb-20 relative overflow-hidden bg-gradient-to-br from-fun-cream/30 to-white">
-           {/* Flying Fun Animation */}
-           <img 
-             src="/images/Flying Fun Completed NO BG.png" 
-             alt="Flying Fun" 
-             className="flying-fun-animation absolute top-1/2 -translate-y-1/2 w-96 h-auto z-10" 
-           />
+          {/* Flying Fun Animation (positioned higher and slightly faster) */}
+          <img
+            src="/images/Flying Fun Completed NO BG.png"
+            alt="Flying Fun"
+            className="flying-fun-animation absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
+          />
            <div className="max-w-7xl mx-auto px-6 py-16 text-center relative z-20">
              {/* FUN Character Image */}
              <div className="mb-12">

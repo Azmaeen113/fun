@@ -258,8 +258,27 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   .flying-fun-animation {
-    animation: flyRightToLeft 8s linear infinite;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    /* slightly faster: reduced from 6s -> 5.5s for a subtle speed increase */
+    animation: flyRightToLeft 5.5s linear infinite;
+    filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.35));
+    /* ensure the flying element sits above entrance photo */
+    z-index: 30;
+    will-change: transform, left;
+  }
+
+  /* Ensure the flying image keeps a consistent, non-responsive pixel size
+     so it doesn't shrink on smaller screens. Use a gentle clamp for very
+     small devices to avoid overflow. */
+  .flying-fun-animation {
+    width: 320px; /* fixed visual size */
+    max-width: none !important;
+    height: auto !important;
+  }
+
+  @media (max-width: 480px) {
+    .flying-fun-animation {
+      width: 240px; /* slightly smaller on very small screens */
+    }
   }
 
   .right-to-left {
@@ -1094,7 +1113,7 @@ Enhanced with sophisticated retro colors and modern typography
 /* Enhanced Keyframe Animations */
 @keyframes flyRightToLeft {
   0% { left: 100%; }
-  100% { left: -200px; }
+  100% { left: -220px; }
 }
 
 @keyframes flyLeftToRight {
