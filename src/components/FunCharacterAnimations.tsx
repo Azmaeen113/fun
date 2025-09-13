@@ -128,15 +128,15 @@ export const FunAnimationLayer = () => {
     <div className="fixed inset-0 pointer-events-none z-10">
       {/* Continuous flying characters */}
       <FlyingCharacter
-        src="/images/Flying Fun Completed NO BG.png"
-        alt="Flying FUN"
-        direction="right-to-left"
+        src="/images/Parachuting FUN Completed NO BG (1).png"
+        alt="Parachuting FUN"
+        direction="left-to-right"
         speed="normal"
       />
       
       <FlyingCharacter
-        src="/images/Upside_Down_FUN_Completed_NO_BG.png"
-        alt="Rocket FUN"
+        src="/images/Swimming FUN Completed NO BG.png"
+        alt="Swimming FUN"
         direction="left-to-right"
         speed="slow"
       />
@@ -148,13 +148,12 @@ export const FunAnimationLayer = () => {
         speed="normal"
       />
 
-      {/* Floating corner character */}
-      <AnimatedCharacter
-        src="/images/Flying_Fun_Completed_NO_BG.png"
+      {/* Left to right flying character */}
+      <FlyingCharacter
+        src="/images/Flying Fun Completed NO BG.png"
         alt="Flying FUN"
-        className="w-16 md:w-20 h-auto"
-        animationType="floating"
-        position={{ top: "10%", right: "5%" }}
+        direction="left-to-right"
+        speed="normal"
       />
     </div>
   );

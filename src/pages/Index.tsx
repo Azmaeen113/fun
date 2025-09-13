@@ -5,7 +5,7 @@ import HeroSprites from '@/components/HeroSpritesClean'
 const Index = () => {
   const [copied, setCopied] = useState(false);
   
-  const contractAddress = "7hZmPPkBDYbFpVzQW54sX3DQHQjEVsVcCFRWsvCdbonk";
+  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
   const copyToClipboard = async () => {
     try {
