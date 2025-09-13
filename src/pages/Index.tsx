@@ -30,27 +30,33 @@ const Index = () => {
 
       {/* Header with MS Paint Navigation */}
       <header className="relative border-b-4 border-fun-dark bg-white p-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between flex-col md:flex-row">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img 
-              src="/images/Pumpfun.jpg" 
-              alt="FUN Logo" 
-              className="w-8 h-8 pixelated" 
-            />
-            <span className="font-body text-lg text-fun-dark">FUN.jpg</span>
+          <div className="flex items-center">
+            <a 
+              href="https://pump.fun" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:opacity-80 transition-opacity duration-200 hover:scale-105 transform transition-transform"
+            >
+              <img 
+                src="/images/pump.png" 
+                alt="Pump.fun Logo" 
+                className="w-20 h-20 pixelated" 
+              />
+            </a>
           </div>
 
           {/* Menu with Hanging Characters */}
-          <nav className="flex space-x-8">
+          <nav className="flex space-x-4 md:space-x-8 flex-wrap justify-center">
             <div className="relative">
               <button className="ms-paint-button font-body text-lg">
                 ABOUT
               </button>
               <img 
-                src="/images/Rope Fun Completed NO BG.png" 
-                alt="Rope FUN" 
-                className="menu-hanger w-12 h-auto" 
+                src="/images/Upside Down FUN Completed NO BG.png" 
+                alt="Upside Down FUN" 
+                className="menu-hanger w-18 h-auto" 
               />
             </div>
             
@@ -61,7 +67,7 @@ const Index = () => {
               <img 
                 src="/images/Roller Coaster FUN Completed NO BG.png" 
                 alt="Menu FUN" 
-                className="menu-hanger w-14 h-auto" 
+                className="menu-hanger w-20 h-auto" 
               />
             </div>
             
@@ -91,11 +97,9 @@ const Index = () => {
          <section className="fun-on-pump-section mb-12">
            <div className="max-w-6xl mx-auto px-4 py-8 text-center">
              <div className="fun-on-pump-container">
-               {/* Line 1: FUN */}
-               <div className="fun-text">FUN</div>
-               
-               {/* Line 2: on the PUMP */}
-               <div className="bottom-line">
+               {/* One Line: FUN on the PUMP */}
+               <div className="flex items-center justify-center space-x-2 md:space-x-4 flex-col sm:flex-row">
+                 <span className="fun-text">FUN</span>
                  <span className="on-the-box">on the</span>
                  <span className="pump-text">PUMP</span>
                </div>
@@ -104,7 +108,13 @@ const Index = () => {
          </section>
 
          {/* PUMPFUNIVERSE Section */}
-         <section className="pumpfuniverse-section mb-12">
+         <section className="pumpfuniverse-section mb-12 relative overflow-hidden">
+           {/* Flying Fun Animation */}
+           <img 
+             src="/images/Flying Fun Completed NO BG.png" 
+             alt="Flying Fun" 
+             className="flying-fun-animation absolute top-1/2 -translate-y-1/2 w-96 h-auto z-10" 
+           />
            <div className="max-w-6xl mx-auto px-4 py-12 text-center">
              {/* FUN Character Image */}
              <div className="mb-8">
@@ -219,38 +229,46 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-8 mb-8">
-            <div className="flex items-center space-x-3">
-              <div className="social-logo-container">
-                <img 
-                  src="/images/dexscreener.png" 
-                  alt="DexScreener" 
-                  className="social-logo"
-                />
-              </div>
-              <span className="font-body text-fun-dark text-lg">DEXSCREENER</span>
-            </div>
-            
-            <div className="flex items-center space-x-3">
-              <div className="social-logo-container">
-                <img 
-                  src="/images/X.png" 
-                  alt="X (Twitter)" 
-                  className="social-logo"
-                />
-              </div>
-              <span className="font-body text-fun-dark text-lg">X</span>
-            </div>
-          </div>
-
           {/* Paint Brush Decoration */}
-          <div className="flex justify-center">
+          <div className="flex justify-center -mt-2">
             <img 
               src="/images/Paint brush.jpg" 
               alt="Paint Brush" 
-              className="theme-decoration brush w-16 h-auto animate-bounce" 
+              className="theme-decoration brush w-32 h-auto animate-bounce" 
             />
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center space-x-4 md:space-x-8 flex-col sm:flex-row">
+            <a 
+              href="https://dexscreener.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:opacity-80 transition-opacity duration-200"
+            >
+              <div className="social-logo-container">
+                <img 
+                  src="/images/dexscreener.avif" 
+                  alt="DexScreener" 
+                  className="w-48 h-48 object-contain pixelated"
+                />
+              </div>
+            </a>
+            
+            <a 
+              href="https://x.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center hover:opacity-80 transition-opacity duration-200"
+            >
+              <div className="social-logo-container">
+                <img 
+                  src="/images/twitter (4).png" 
+                  alt="Twitter" 
+                  className="w-16 h-16 object-contain pixelated"
+                />
+              </div>
+            </a>
           </div>
         </section>
       </main>
