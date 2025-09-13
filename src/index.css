@@ -415,9 +415,10 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   .mobile-shutter.open {
-    height: 100vh; /* full viewport height when open */
+    height: auto; /* auto height to fit content */
     opacity: 1;
     transform: none;
+    min-height: 200px; /* ensure minimum height for content */
   }
 
   /* Ensure the mobile hamburger sits top-right and does not wrap */
@@ -607,8 +608,9 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   .mobile-shutter.open {
-    height: 100vh; /* expand to full viewport height for the shutter effect */
+    height: auto; /* auto height to fit content */
     transform: scaleY(1);
+    min-height: 200px; /* ensure minimum height for content */
   }
 
   /* Ensure the mobile nav links appear nicely */

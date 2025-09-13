@@ -128,8 +128,8 @@ export const FunAnimationLayer = () => {
     <div className="fixed inset-0 pointer-events-none z-10">
       {/* Continuous flying characters */}
       <FlyingCharacter
-        src="/images/Swimming_FUN_Completed_NO_BG.png"
-        alt="Swimming FUN"
+        src="/images/Flying Fun Completed NO BG.png"
+        alt="Flying FUN"
         direction="right-to-left"
         speed="normal"
       />

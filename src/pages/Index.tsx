@@ -53,7 +53,7 @@ const Index = () => {
           </div>
 
           {/* Enhanced Menu with Hanging Characters */}
-          <nav className="hidden sm:flex space-x-6 lg:space-x-8 flex-wrap justify-center">
+          <nav className="hidden sm:flex space-x-6 lg:space-x-8 flex-wrap justify-center items-center">
             <div className="relative group">
               <button className="ms-paint-button font-accent text-base">
                 ABOUT
@@ -108,7 +108,7 @@ const Index = () => {
 
       {/* Mobile Shuttering Nav Panel */}
       <div
-        className={`mobile-shutter fixed top-0 left-0 w-full h-0 overflow-hidden bg-white z-40 transform-origin-top ${mobileNavOpen ? 'open' : ''}`}
+        className={`mobile-shutter fixed top-20 left-0 w-full h-0 overflow-hidden bg-white z-50 transform-origin-top ${mobileNavOpen ? 'open' : ''}`}
         aria-hidden={!mobileNavOpen}
       >
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -143,7 +143,7 @@ const Index = () => {
                    <h1 className="font-black text-black tracking-wide text-6xl lg:text-8xl">FUN</h1>
                  </div>
                  <div className="flex items-center justify-center gap-4">
-                   <span className="font-bold text-black text-3xl lg:text-6xl">ON the</span>
+                   <span className="font-bold text-black text-3xl lg:text-6xl">OF the</span>
                    <img 
                      src="/images/PUMP_pill_Painted-removebg-preview.png" 
                      alt="PUMP" 
@@ -157,12 +157,18 @@ const Index = () => {
 
          {/* Enhanced PUMPFUNIVERSE Section */}
          <section className="pumpfuniverse-section mb-20 relative overflow-hidden bg-white">
-          {/* Flying Fun Animation (positioned higher and slightly faster) */}
-          <img
-            src="/images/Flying Fun Completed NO BG.png"
-            alt="Flying Fun"
-            className="flying-fun-animation absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
-          />
+           {/* Parachuting Fun Animation (positioned higher and slightly faster) */}
+           <img
+             src="/images/Parachuting FUN Completed NO BG (1).png"
+             alt="Parachuting Fun"
+             className="flying-fun-animation absolute top-[34%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
+           />
+           {/* Swimming Fun Animation (positioned lower for raining effect) */}
+           <img
+             src="/images/Swimming FUN Completed NO BG.png"
+             alt="Swimming Fun"
+             className="flying-fun-animation absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-auto pointer-events-none"
+           />
            <div className="max-w-7xl mx-auto px-6 py-16 text-center relative z-20">
              {/* FUN Character Image */}
              <div className="mb-12">
@@ -172,7 +178,7 @@ const Index = () => {
                  className="hero-character-image mx-auto w-full max-w-md h-auto transition-transform duration-500 hover:scale-105" 
                />
                <div className="tilted-bg-primary inline-block mb-6">
-                 <h1 className="font-title text-3xl lg:text-5xl text-white px-6 py-3 pixelated-title">
+                 <h1 className="font-title text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 pixelated-title">
                    WELCOME TO THE PUMPFUNVERSE
                  </h1>
                </div>
@@ -183,17 +189,17 @@ const Index = () => {
                <div className="bg-white border-4 border-fun-teal rounded-2xl shadow-lg overflow-hidden">
                  {/* Green Banner Title */}
                  <div className="tilted-bg-primary">
-                   <h2 className="font-title text-2xl lg:text-3xl text-white px-6 py-4 pixelated-title text-center">
+                   <h2 className="font-title text-lg sm:text-xl md:text-2xl lg:text-3xl text-white px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 pixelated-title text-center">
                      My name is <span className="fun-highlight">FUN</span>, the guy of the pump!
                    </h2>
                  </div>
                  
                  {/* Box Content */}
-                 <div className="p-8">
-                     <p className="roboto-text text-base lg:text-4xl mb-4">
+                 <div className="p-4 sm:p-6 md:p-8">
+                     <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl mb-4">
                        PUMPFUNVERSE is a large amusement park with candle jumping, swingers and jeets popping activities.
                      </p>
-                     <p className="roboto-text text-base lg:text-4xl">
+                     <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl">
                        Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the DEXSCREENER arena for PvP plays.
                      </p>
                  </div>
@@ -271,8 +277,7 @@ const Index = () => {
             <img 
               src="/images/Paint brush.png" 
               alt="Paint Brush" 
-              className="absolute top-full left-1/2 transform -translate-x-1/2 w-[112px] h-auto animate-bounce transition-transform duration-300 hover:scale-110 z-10" 
-              style={{ transform: 'translateX(-50%) rotate(-15deg)' }}
+              className="absolute top-full left-1/2 -translate-x-1/2 w-[112px] h-auto animate-bounce transition-transform duration-300 hover:scale-110 z-10 rotate-[-15deg]" 
             />
           </div>
 
@@ -280,9 +285,9 @@ const Index = () => {
 
       </main>
 
-      {/* Enhanced Social Links - Now first */}
-      <section className="py-12 bg-white text-center">
-        <div className="flex justify-center space-x-8 lg:space-x-12 flex-col sm:flex-row gap-8">
+      {/* Enhanced Social Links - Centered above footer */}
+      <section className="py-16 bg-white text-center">
+        <div className="flex justify-center items-center space-x-12 lg:space-x-16">
           <a 
             href="https://dexscreener.com" 
             target="_blank" 
@@ -291,9 +296,9 @@ const Index = () => {
           >
             <div className="social-logo-container">
               <img 
-                src="/images/dexscreener.avif" 
+                src="/images/dexscreener.png" 
                 alt="DexScreener" 
-                className="w-56 h-56 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
               />
             </div>
           </a>
@@ -308,7 +313,7 @@ const Index = () => {
               <img 
                 src="/images/twitter (4).png" 
                 alt="Twitter" 
-                className="w-20 h-20 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 object-contain pixelated transition-transform duration-300 group-hover:rotate-12"
               />
             </div>
           </a>
