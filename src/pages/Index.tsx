@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import HeroSprites from '@/components/HeroSpritesClean'
 
 const Index = () => {
   const [copied, setCopied] = useState(false);
@@ -25,30 +26,34 @@ const Index = () => {
     }
   };
 
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Full-site decorative sprites (fixed background) */}
+      <HeroSprites count={30} />
 
-      {/* Enhanced Header with Modern Navigation (now fixed) */}
-      <header className="fixed top-0 left-0 w-full border-b-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-6 shadow-lg z-50">
+  {/* Enhanced Header with Modern Navigation (now fixed) */}
+  <header className="site-header fixed top-0 left-0 w-full border-b-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-3 shadow-lg z-50 h-20">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-col lg:flex-row gap-6">
           {/* Logo */}
           <div className="flex items-center">
-            <a 
-              href="https://pump.fun" 
-              target="_blank" 
+            <a
+              href="https://pump.fun"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
             >
-              <img 
-                src="/images/pump.png" 
-                alt="Pump.fun Logo" 
-                className="w-24 h-24 pixelated transition-transform duration-300 group-hover:rotate-12" 
+              <img
+                src="/images/pump.png"
+                alt="Pump.fun Logo"
+                className="w-16 h-16 pixelated transition-transform duration-300 group-hover:rotate-12"
               />
             </a>
           </div>
 
           {/* Enhanced Menu with Hanging Characters */}
-          <nav className="flex space-x-6 lg:space-x-8 flex-wrap justify-center">
+          <nav className="hidden sm:flex space-x-6 lg:space-x-8 flex-wrap justify-center">
             <div className="relative group">
               <button className="ms-paint-button font-accent text-base">
                 ABOUT
@@ -64,45 +69,74 @@ const Index = () => {
               <button className="ms-paint-button font-accent text-base">
                 CHART
               </button>
-              <img 
-                src="/images/Roller Coaster FUN Completed NO BG.png" 
-                alt="Menu FUN" 
-                className="menu-hanger w-20 h-auto transition-transform duration-300 group-hover:scale-110" 
-              />
             </div>
             
             <div className="relative group">
               <button className="ms-paint-button font-accent text-base">
                 FOLLOW ON X
               </button>
+              <img
+                src="/images/Rope Fun Completed NO BG.png"
+                alt="Rope Fun"
+                className="menu-hanger w-18 h-auto transition-transform duration-300 group-hover:scale-110"
+                style={{ transform: 'translateX(-50%) scale(0.5)' }}
+              />
             </div>
           </nav>
+          {/* Mobile hamburger (shuttering nav) */}
+          <div className="sm:hidden flex items-center">
+            <button
+              aria-label="Open menu"
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen((s) => !s)}
+              className="ms-paint-button p-2"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="6" width="18" height="2" fill="currentColor" />
+                <rect x="3" y="11" width="18" height="2" fill="currentColor" />
+                <rect x="3" y="16" width="18" height="2" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
+      {/* Mobile Shuttering Nav Panel */}
+      <div
+        className={`mobile-shutter fixed top-0 left-0 w-full h-0 overflow-hidden bg-white z-40 transform-origin-top ${mobileNavOpen ? 'open' : ''}`}
+        aria-hidden={!mobileNavOpen}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-col space-y-4">
+            <a href="#about" className="ms-paint-button">ABOUT</a>
+            <a href="#chart" className="ms-paint-button">CHART</a>
+            <a href="#follow" className="ms-paint-button">FOLLOW ON X</a>
+          </div>
+        </div>
+      </div>
+
        {/* Enhanced Main Content */}
   {/* add top padding equal to header height so content is not hidden */}
-  <main className="max-w-7xl mx-auto px-6 pt-28 pb-12 relative">
-         {/* Hero Section with FUN Character */}
+  <main className="max-w-7xl mx-auto px-6 pt-20 pb-12 relative">
+         {/* Hero Section with FUN Character and FUN on the PUMP title */}
          <section className="text-center mb-16 relative">
-           <div className="mb-12">
-             <img 
-               src="/images/Ticker.png" 
-               alt="FUN Character" 
-               className="hero-image mx-auto w-full max-w-lg h-auto transition-transform duration-500 hover:scale-105" 
-             />
+           <div className="mb-12 mt-4">
+              <div className="relative w-full h-auto">
+                <img
+                  src="/images/Ticker.png"
+                  alt="FUN Character"
+                  className="hero-image mx-auto w-full max-w-[18rem] h-auto transition-transform duration-500 hover:scale-105"
+                />
+              </div>
            </div>
-         </section>
 
-         {/* FUN on the PUMP Section - Original Design */}
-         <section className="fun-on-pump-section mb-20 relative">
-           <div className="max-w-7xl mx-auto px-6 py-12 text-center">
-             <div className="fun-on-pump-container">
-               {/* Original Design: FUN on the PUMP */}
-               <div className="flex items-center justify-center space-x-4 lg:space-x-6 flex-col sm:flex-row gap-4">
-                 <span className="fun-text">FUN</span>
-                 <span className="on-the-box">on the</span>
-                 <span className="pump-text">PUMP</span>
+           {/* FUN on the PUMP - placed in hero */}
+           <div className="fun-on-pump-section mb-6 relative">
+             <div className="max-w-7xl mx-auto px-6 py-6 text-center">
+               <div className="inline-block fun-on-pump-large">
+                 <h1 className="inline-block font-black text-black tracking-wide mr-4">FUN</h1>
+                 <span className="inline-block font-bold text-black mr-2">ON the</span>
+                 <span className="bg-bucky-green fun-pump-inline transform rotate-3 inline-block text-black">pump</span>
                </div>
              </div>
            </div>
@@ -205,10 +239,10 @@ const Index = () => {
             <h3 className="font-title text-4xl lg:text-6xl text-white px-6 py-4">
               GRAB YOUR TICKET TODAY!
             </h3>
-            {/* Hanging Rope Fun Character */}
+            {/* Hanging Shocked Fun Character (replaced per request) */}
             <img 
-              src="/images/Rope Fun Completed NO BG.png" 
-              alt="Rope Fun Character" 
+              src="/images/Shocked FUN Completed NO BG.png" 
+              alt="Shocked Fun Character" 
               className="hanging-rope-fun"
             />
           </div>

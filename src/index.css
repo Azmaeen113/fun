@@ -246,6 +246,63 @@ Enhanced with sophisticated retro colors and modern typography
     transform: translateY(0px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
   }
+
+  /* Small utility to match screenshot bright green block used for "pump" */
+  .bg-bucky-green {
+    background-color: #00FF00; /* bright lime green */
+    color: #000000; /* black text (as requested) */
+    display: inline-block;
+    padding: 0.25rem 0.75rem; /* small horizontal padding and slight vertical */
+    line-height: 1;
+    transform-origin: center;
+    box-sizing: border-box;
+  }
+
+  /* Large single-line variant for FUN ON PUMP */
+  .fun-on-pump-large {
+    font-size: 6rem; /* base very large */
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .fun-on-pump-large h1 {
+    font-size: 6rem;
+  }
+
+  .fun-pump-inline {
+    padding: 0.5rem 1rem;
+    transform: rotate(3deg);
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .fun-on-pump-large {
+      font-size: 3rem; /* scale down on tablets */
+    }
+
+    .fun-on-pump-large h1 {
+      font-size: 3rem;
+    }
+
+    .fun-pump-inline {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .fun-on-pump-large {
+      font-size: 2rem; /* mobile safe */
+      display: block;
+      text-align: center;
+    }
+
+    .fun-on-pump-large h1, .fun-on-pump-large span {
+      display: inline-block;
+      margin: 0.2rem 0.25rem;
+    }
+  }
 }
 
 /* FUN Character Animation System */
@@ -279,6 +336,31 @@ Enhanced with sophisticated retro colors and modern typography
     .flying-fun-animation {
       width: 240px; /* slightly smaller on very small screens */
     }
+  }
+
+  /* Safety rules for sticky site header */
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem; /* matches the Tailwind h-16 used in JSX */
+    z-index: 9999; /* ensure it stays on top */
+    backdrop-filter: blur(6px);
+    background-color: rgba(255,255,255,0.95); /* slight opacity to preserve retro look */
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      height: 3.5rem; /* slightly smaller header on mobile */
+    }
+  }
+
+  /* Reduce ms-paint-button padding and font-size to keep header compact */
+  .ms-paint-button {
+    padding: 0.25rem 0.6rem; /* even smaller padding for lower button height */
+    font-size: 0.85rem;
+    line-height: 1; /* reduce vertical height */
   }
 
   .right-to-left {
@@ -398,10 +480,22 @@ Enhanced with sophisticated retro colors and modern typography
     filter: drop-shadow(4px 4px 0px hsl(var(--fun-dark-green)));
   }
 
+  /* Ensure hero sprites are behind content but above the page background */
+  .hero-section-sprites {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
   /* FUN on the PUMP Section Styles */
   .fun-on-pump-section {
     background-color: white;
     font-family: 'VT323', 'Courier New', monospace;
+    /* pull the section up slightly so the lettering sits just below the hero image with a small gap */
+    margin-top: -2.25rem; /* smaller offset to create a little gap */
+    position: relative;
+    z-index: 20;
   }
 
   .fun-on-pump-container {
@@ -411,21 +505,95 @@ Enhanced with sophisticated retro colors and modern typography
     gap: 20px;
   }
 
+  /* Reduce the top padding of the inner container so the text hugs the hero image.
+     The immediate child in the JSX is a div with padding (px-6 py-12), so target it here. */
+  .fun-on-pump-section > div {
+    padding-top: 0.5rem !important; /* tiny top padding so there's a small visible gap */
+  }
+
+  /* Responsive adjustments: smaller negative offset on smaller screens */
+  @media (max-width: 1024px) {
+    .fun-on-pump-section {
+      margin-top: -1.75rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .fun-on-pump-section {
+      margin-top: -1.25rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .fun-on-pump-section {
+      margin-top: -0.5rem;
+    }
+  }
+
+  /* Mobile shuttering nav panel */
+  .mobile-shutter {
+    height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 400ms var(--smooth-ease), height 400ms var(--smooth-ease);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  .mobile-shutter.open {
+    height: 100vh; /* expand to full viewport height for the shutter effect */
+    transform: scaleY(1);
+  }
+
+  /* Ensure the mobile nav links appear nicely */
+  .mobile-shutter .ms-paint-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
   .fun-text {
-    font-family: 'Space Grotesk', sans-serif;
+    /* Enhanced FUN lettering: pixelated, boxed, gradient-filled text with
+       strong outline and drop-shadow to emulate the MS Paint-style image */
+    font-family: 'Press Start 2P', 'Space Grotesk', sans-serif;
     font-weight: 900;
     font-size: var(--text-6xl);
-    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     line-height: 0.9;
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 6px solid #000; /* bold black outline like pixel art */
+    background: linear-gradient(135deg, hsl(var(--fun-golden-yellow)), hsl(var(--fun-coral-pink)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.35); /* offset shadow for depth */
+    transform: skew(-6deg);
+    image-rendering: pixelated;
     text-align: center;
-    text-shadow: none;
-    background: none;
-    background-clip: unset;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: #000000;
-    animation: none;
+    vertical-align: middle;
+    -webkit-font-smoothing: none;
+  }
+
+  /* PUMP lettering complements FUN: bold boxed style with dark fill and outline */
+  .pump-text {
+    font-family: 'Press Start 2P', 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: var(--text-6xl);
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 6px solid #000;
+    background: linear-gradient(135deg, hsl(var(--fun-mid-green)), hsl(var(--fun-dark-green)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+    transform: skew(-6deg);
+    image-rendering: pixelated;
+    text-align: center;
+    vertical-align: middle;
   }
 
   /* Enhanced FUN and PUMP text styling */
