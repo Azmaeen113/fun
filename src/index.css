@@ -1031,8 +1031,14 @@ Enhanced with sophisticated retro colors and modern typography
 
   /* PUMPFUNIVERSE Section Styles */
   .pumpfuniverse-section {
-    background-color: white;
+    background-color: transparent;
     font-family: 'VT323', 'Courier New', monospace;
+  }
+
+  /* Make all sections crystal clear glass for floating images visibility */
+  section {
+    background-color: transparent !important;
+    backdrop-filter: blur(0px);
   }
 
   /* Pixelated Text Styles */

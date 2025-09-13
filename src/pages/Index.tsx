@@ -123,9 +123,9 @@ const Index = () => {
            <div className="mb-12 mt-4">
               <div className="relative w-full h-auto">
                 <img
-                  src="/images/Ticker.png"
+                  src="/images/Animated ticker.gif"
                   alt="FUN Character"
-                  className="hero-image mx-auto w-full max-w-[18rem] h-auto transition-transform duration-500 hover:scale-105"
+                  className="hero-image mx-auto w-full max-w-[15rem] h-auto transition-transform duration-500 hover:scale-105"
                 />
               </div>
            </div>
@@ -136,14 +136,18 @@ const Index = () => {
                <div className="inline-block fun-on-pump-large">
                  <h1 className="inline-block font-black text-black tracking-wide mr-4">FUN</h1>
                  <span className="inline-block font-bold text-black mr-2">ON the</span>
-                 <span className="bg-bucky-green fun-pump-inline transform rotate-3 inline-block text-black">pump</span>
+                 <img 
+                   src="/images/PUMP_pill_Painted-removebg-preview.png" 
+                   alt="PUMP" 
+                   className="inline-block transform rotate-3 w-32 h-auto"
+                 />
                </div>
              </div>
            </div>
          </section>
 
          {/* Enhanced PUMPFUNIVERSE Section */}
-         <section className="pumpfuniverse-section mb-20 relative overflow-hidden bg-gradient-to-br from-fun-cream/30 to-white">
+         <section className="pumpfuniverse-section mb-20 relative overflow-hidden bg-white">
           {/* Flying Fun Animation (positioned higher and slightly faster) */}
           <img
             src="/images/Flying Fun Completed NO BG.png"
@@ -156,7 +160,7 @@ const Index = () => {
                <img 
                  src="/images/Statue FUN Completed NO BG.png" 
                  alt="FUN Character" 
-                 className="hero-character-image mx-auto w-full max-w-lg h-auto transition-transform duration-500 hover:scale-105" 
+                 className="hero-character-image mx-auto w-full max-w-md h-auto transition-transform duration-500 hover:scale-105" 
                />
                <div className="tilted-bg-primary inline-block mb-6">
                  <h1 className="font-title text-3xl lg:text-5xl text-white px-6 py-3 pixelated-title">
@@ -170,17 +174,17 @@ const Index = () => {
                <div className="bg-white border-4 border-fun-teal rounded-2xl shadow-lg overflow-hidden">
                  {/* Green Banner Title */}
                  <div className="tilted-bg-primary">
-                   <h2 className="font-title text-2xl lg:text-3xl text-white px-6 py-4 pixelated-title text-center">
+                   <h2 className="ms-paint-button text-2xl lg:text-3xl text-white px-6 py-4 text-center">
                      My name is <span className="fun-highlight">FUN</span>, the guy of the pump!
                    </h2>
                  </div>
                  
                  {/* Box Content */}
                  <div className="p-8">
-                   <p className="description-text pixelated-description mb-4">
+                   <p className="ms-paint-button text-base mb-4">
                      PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jets popping activities.
                    </p>
-                   <p className="description-text pixelated-description">
+                   <p className="ms-paint-button text-base">
                      Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable desens, or hanging out at the DEXSCREENER arena for PvP plays.
                    </p>
                  </div>
@@ -189,31 +193,6 @@ const Index = () => {
            </div>
          </section>
 
-        {/* Enhanced Welcome Section */}
-        <section className="mb-20 relative">
-          <div className="bg-gradient-to-br from-white to-fun-cream/50 border-4 border-fun-teal p-12 relative rounded-2xl shadow-xl">
-            <div className="mb-8">
-              <div className="tilted-bg-primary mb-6 inline-block">
-                <h2 className="font-title text-3xl lg:text-5xl text-white pixelated-title">
-                  WELCOME TO THE PUMPFUNVERSE
-                </h2>
-              </div>
-            </div>
-
-            <div className="space-y-8 font-body text-xl lg:text-2xl text-fun-charcoal leading-relaxed max-w-4xl mx-auto">
-              <p className="pixelated-description-small">
-                My name is <span className="tilted-bg-secondary text-white px-3 py-1">FUN</span>, the guy of the pump!
-              </p>
-              
-              <p className="pixelated-description-small">
-                PUMPFUNVERSE is a large amusement park with candle jumping, swingers and jeets popping activities. 
-                Join me now at this fun playground where we can mess around, such as using the announcement system 
-                to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the 
-                DEXSCREENER arena for PvP plays.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Enhanced Born Section */}
         <section className="mb-20 text-center relative">
@@ -257,12 +236,13 @@ const Index = () => {
             <img 
               src="/images/1000006803.png" 
               alt="Landscape Image" 
-              className="landscape-left-rotated mx-auto max-w-xl w-full h-auto transition-transform duration-500 hover:scale-105" 
+              className="landscape-left-rotated mx-auto w-full h-auto transition-transform duration-500 hover:scale-105" 
+              style={{ maxWidth: '20rem' }}
             />
           </div>
 
           {/* Enhanced Contract Address Copy Tool */}
-          <div className="max-w-2xl mx-auto mb-12">
+          <div className="max-w-2xl mx-auto mb-12 relative">
             <div className="contract-copy-tool">
               <div className="flex items-center justify-between">
                 <span className="contract-address-text">
@@ -276,15 +256,13 @@ const Index = () => {
                 </button>
               </div>
             </div>
-          </div>
-
-          {/* Enhanced Paint Brush Decoration */}
-          <div className="flex justify-center mb-12">
-              <img 
-                src="/images/Paint brush.jpg" 
-                alt="Paint Brush" 
-                className="theme-decoration brush w-[112px] h-auto animate-bounce transition-transform duration-300 hover:scale-110" 
-              />
+            {/* Paint Brush positioned to touch the BOTTOM edge of the contract address banner */}
+            <img 
+              src="/images/Paint brush.png" 
+              alt="Paint Brush" 
+              className="absolute top-full left-1/2 transform -translate-x-1/2 w-[112px] h-auto animate-bounce transition-transform duration-300 hover:scale-110 z-10" 
+              style={{ transform: 'translateX(-50%) rotate(-15deg)' }}
+            />
           </div>
 
           {/* Enhanced Social Links */}
