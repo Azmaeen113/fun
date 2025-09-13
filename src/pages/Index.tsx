@@ -124,29 +124,32 @@ const Index = () => {
                  className="hero-character-image mx-auto w-full max-w-lg h-auto transition-transform duration-500 hover:scale-105" 
                />
                <div className="tilted-bg-primary inline-block mb-6">
-                 <h1 className="font-title text-3xl lg:text-5xl text-white px-6 py-3">
+                 <h1 className="font-title text-3xl lg:text-5xl text-white px-6 py-3 pixelated-title">
                    WELCOME TO THE PUMPFUNIVERSE
                  </h1>
                </div>
              </div>
 
-             {/* Enhanced Character Introduction */}
-             <div className="character-intro mb-8">
-               <div className="tilted-bg-secondary inline-block mb-4">
-                 <p className="font-title text-xl lg:text-2xl text-white px-4 py-2">
-                   My name is <span className="fun-highlight">FUN</span>, the guy of the pump!
-                 </p>
+             {/* Enhanced Box with Banner Title */}
+             <div className="max-w-5xl mx-auto mb-8">
+               <div className="bg-white border-4 border-fun-teal rounded-2xl shadow-lg overflow-hidden">
+                 {/* Green Banner Title */}
+                 <div className="tilted-bg-primary">
+                   <h2 className="font-title text-2xl lg:text-3xl text-white px-6 py-4 pixelated-title text-center">
+                     My name is <span className="fun-highlight">FUN</span>, the guy of the pump!
+                   </h2>
+                 </div>
+                 
+                 {/* Box Content */}
+                 <div className="p-8">
+                   <p className="description-text pixelated-description mb-4">
+                     PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jets popping activities.
+                   </p>
+                   <p className="description-text pixelated-description">
+                     Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable desens, or hanging out at the DEXSCREENER arena for PvP plays.
+                   </p>
+                 </div>
                </div>
-             </div>
-
-             {/* Enhanced Description Paragraph */}
-             <div className="description max-w-5xl mx-auto">
-               <p className="description-text">
-                 PUMPFUNIVERSE is a large amusement park with candle jumping, swingers and jets popping activities.
-               </p>
-               <p className="description-text">
-                 Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable desens, or hanging out at the DEXSCREENER arena for PvP plays.
-               </p>
              </div>
            </div>
          </section>
@@ -156,18 +159,18 @@ const Index = () => {
           <div className="bg-gradient-to-br from-white to-fun-cream/50 border-4 border-fun-teal p-12 relative rounded-2xl shadow-xl">
             <div className="mb-8">
               <div className="tilted-bg-primary mb-6 inline-block">
-                <h2 className="font-title text-3xl lg:text-5xl text-white">
+                <h2 className="font-title text-3xl lg:text-5xl text-white pixelated-title">
                   WELCOME TO THE PUMPFUNVERSE
                 </h2>
               </div>
             </div>
 
             <div className="space-y-8 font-body text-xl lg:text-2xl text-fun-charcoal leading-relaxed max-w-4xl mx-auto">
-              <p>
+              <p className="pixelated-description-small">
                 My name is <span className="tilted-bg-secondary text-white px-3 py-1">FUN</span>, the guy of the pump!
               </p>
               
-              <p>
+              <p className="pixelated-description-small">
                 PUMPFUNVERSE is a large amusement park with candle jumping, swingers and jeets popping activities. 
                 Join me now at this fun playground where we can mess around, such as using the announcement system 
                 to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the 
@@ -282,9 +285,9 @@ const Index = () => {
       {/* Enhanced Footer */}
       <footer className="border-t-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-8 mt-16 shadow-lg">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="font-body text-base lg:text-lg text-fun-charcoal leading-relaxed max-w-4xl mx-auto">
-            Disclaimer: This is just a meme coin, not financial advice—do your own research, apes only at your own risk and for the lols.
-          </p>
+           <p className="font-body text-base lg:text-lg text-fun-charcoal leading-relaxed max-w-4xl mx-auto pixelated-description">
+             Disclaimer: This is just a meme coin, not financial advice—do your own research, apes only at your own risk and for the lols.
+           </p>
         </div>
       </footer>
     </div>

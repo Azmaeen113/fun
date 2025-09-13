@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -783,6 +784,55 @@ Enhanced with sophisticated retro colors and modern typography
   .pumpfuniverse-section {
     background-color: white;
     font-family: 'VT323', 'Courier New', monospace;
+  }
+
+  /* Pixelated Text Styles */
+  .pixelated-text {
+    font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace;
+    font-size: 0.8em;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    text-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .pixelated-title {
+    font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace;
+    font-size: 0.6em;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+    text-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .pixelated-description {
+    font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace !important;
+    font-size: 1.2em !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.1em !important;
+    text-rendering: optimizeSpeed !important;
+    image-rendering: pixelated !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: crisp-edges !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+  }
+
+  .pixelated-description-small {
+    font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace !important;
+    font-size: 0.8em !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.1em !important;
+    text-rendering: optimizeSpeed !important;
+    image-rendering: pixelated !important;
+    image-rendering: -moz-crisp-edges !important;
+    image-rendering: crisp-edges !important;
+    font-weight: normal !important;
+    color: #000000 !important;
   }
 
   .hero-character-image {
