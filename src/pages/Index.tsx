@@ -5,7 +5,7 @@ import HeroSprites from '@/components/HeroSpritesClean'
 const Index = () => {
   const [copied, setCopied] = useState(false);
   
-  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+  const contractAddress = "7YCqRSeEeH5VqXU8AoeBNn4LaMqxdCLQspb8NZpSpump";
 
   // SIMPLE CURSOR FORCE - This will definitely work
   useEffect(() => {
