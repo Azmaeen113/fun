@@ -1218,7 +1218,7 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   .copy-icon-button {
-    background: hsl(var(--fun-cream-white));
+    background: #148a72;
     border: 3px solid hsl(var(--fun-deep-teal));
     border-radius: 12px;
     padding: 12px 16px;
@@ -1244,7 +1244,7 @@ Enhanced with sophisticated retro colors and modern typography
   .copy-icon-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
-    background: #148a72;
+    background: hsl(var(--fun-cream-white));
   }
 
   .copy-icon-button:hover::before {

@@ -227,7 +227,7 @@ const Index = () => {
                  {/* Box Content */}
                  <div className="p-4 sm:p-6 md:p-8">
                      <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl mb-4">
-                       PUMPFUNVERSE is a large amusement park with jumping, swingers, jeets popping activities, and much more.
+                       PUMPFUNVERSE is a large amusement park with candle jumping, swingers, jeets popping activities, and much more.
                      </p>
                      <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl">
                        Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the DEXSCREENER arena for PvP plays.
