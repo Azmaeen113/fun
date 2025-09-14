@@ -126,33 +126,11 @@ export const ContentCharacter = ({
 export const FunAnimationLayer = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-10">
-      {/* Continuous flying characters */}
+      {/* Only Roller Coaster FUN flying in background */}
       <FlyingCharacter
-        src="/images/Parachuting FUN Completed NO BG (1).png"
-        alt="Parachuting FUN"
-        direction="left-to-right"
-        speed="normal"
-      />
-      
-      <FlyingCharacter
-        src="/images/Swimming FUN Completed NO BG.png"
-        alt="Swimming FUN"
-        direction="left-to-right"
-        speed="slow"
-      />
-      
-      <FlyingCharacter
-        src="/images/Another_Roller_Coaster_FUN_Completed_NO_BG.png"
-        alt="Coaster FUN"
+        src="/images/Another Roller Coaster FUN Completed NO BG.png"
+        alt="Roller Coaster FUN"
         direction="diagonal"
-        speed="normal"
-      />
-
-      {/* Left to right flying character */}
-      <FlyingCharacter
-        src="/images/Flying Fun Completed NO BG.png"
-        alt="Flying FUN"
-        direction="left-to-right"
         speed="normal"
       />
     </div>

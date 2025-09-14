@@ -114,67 +114,10 @@ Enhanced with sophisticated retro colors and modern typography
     @apply border-border;
   }
 
-  /* BULLETPROOF CURSOR SOLUTION */
-  
-  /* Create a small cursor using CSS - this will work! */
-  * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%23000"/></svg>') 12 12, crosshair !important;
-  }
-
+  /* Normal cursor behavior restored */
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'VT323', 'VCR OSD Mono', monospace;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%23000"/></svg>') 12 12, crosshair !important;
-  }
-
-  /* Interactive elements */
-  a, button, .clickable, .ms-paint-button, .copy-icon-button, .contract-copy-tool {
-    cursor: pointer !important;
-  }
-
-  /* Text elements */
-  input, textarea {
-    cursor: text !important;
-  }
-
-  /* CREATE A SIMPLE CURSOR USING CSS */
-  
-  /* Custom cursor using CSS - this will definitely work */
-  .custom-cursor {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="%23000" stroke="%23fff" stroke-width="1"/><circle cx="8" cy="8" r="2" fill="%23fff"/></svg>') 8 8, crosshair;
-  }
-
-  /* Fallback for browsers that don't support custom cursors */
-  @supports not (cursor: url()) {
-    body, * {
-      cursor: pointer;
-    }
-  }
-
-  /* Force cursor on specific elements with multiple fallbacks */
-  .ms-paint-button {
-    cursor: url('/images/cursor.png') 8 8, url('/images/cursor.png'), pointer !important;
-  }
-
-  .copy-icon-button {
-    cursor: url('/images/cursor.png') 8 8, url('/images/cursor.png'), pointer !important;
-  }
-
-  .contract-copy-tool {
-    cursor: url('/images/cursor.png') 8 8, url('/images/cursor.png'), pointer !important;
-  }
-
-  /* Additional cursor implementations for testing */
-  .test-cursor-1 {
-    cursor: url('/images/cursor.png') 0 0, crosshair;
-  }
-
-  .test-cursor-2 {
-    cursor: url('/images/cursor.png') 16 16, help;
-  }
-
-  .test-cursor-3 {
-    cursor: url('/images/cursor.png') 32 32, move;
   }
 
   /* Modern Retro Typography System */
@@ -249,7 +192,6 @@ Enhanced with sophisticated retro colors and modern typography
     font-weight: 600;
     font-size: var(--text-base);
     color: hsl(var(--fun-charcoal));
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), pointer;
     transition: all 0.3s var(--smooth-ease);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
     text-transform: uppercase;
@@ -1262,15 +1204,7 @@ Enhanced with sophisticated retro colors and modern typography
     transition: left 0.6s var(--smooth-ease);
   }
 
-  .contract-copy-tool:hover {
-    background: linear-gradient(135deg, hsl(var(--fun-cream-white)), hsl(var(--fun-cream-white)));
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .contract-copy-tool:hover::before {
-    left: 100%;
-  }
+  /* Contract address bar should not change on hover - keeping original design */
 
   .contract-address-text {
     font-family: 'Inter', sans-serif;
@@ -1310,7 +1244,7 @@ Enhanced with sophisticated retro colors and modern typography
   .copy-icon-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
-    background: hsl(var(--fun-mint-green));
+    background: #148a72;
   }
 
   .copy-icon-button:hover::before {

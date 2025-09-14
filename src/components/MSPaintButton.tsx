@@ -10,7 +10,7 @@ interface MSPaintButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const MSPaintButton = React.forwardRef<HTMLButtonElement, MSPaintButtonProps>(
   ({ className, variant = "default", size = "medium", children, ...props }, ref) => {
     const baseStyles = `
-      font-body border-3 cursor-[url('/images/cursor.png'),_pointer] 
+      font-body border-3 
       transition-all duration-100 active:translate-y-1 select-none
       disabled:opacity-50 disabled:cursor-not-allowed
     `;

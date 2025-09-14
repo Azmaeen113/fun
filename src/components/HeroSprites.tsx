@@ -14,7 +14,6 @@ type SpriteState = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min
@@ -138,7 +137,6 @@ type SpriteState = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 function rand(min: number, max: number) {
@@ -268,7 +266,6 @@ type SpriteState = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 function rand(min: number, max: number) {
@@ -402,7 +399,6 @@ type Sprite = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 function rand(min: number, max: number) {
@@ -556,7 +552,6 @@ type Sprite = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 function rand(min: number, max: number) {
@@ -723,7 +718,6 @@ type Sprite = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
 ]
 
 function rand(min: number, max: number) {

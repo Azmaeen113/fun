@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { MSPaintButton } from "./MSPaintButton";
 
 interface ContractCopyToolProps {
   contractAddress: string;
@@ -59,11 +58,9 @@ export const ContractCopyTool = ({ contractAddress, className = "" }: ContractCo
           </code>
         </div>
         
-        <MSPaintButton
+        <button
           onClick={copyToClipboard}
-          variant="secondary"
-          size="medium"
-          className="flex items-center gap-2 min-w-24 justify-center"
+          className="copy-icon-button flex items-center gap-2 min-w-24 justify-center"
         >
           {copied ? (
             <>
@@ -76,7 +73,7 @@ export const ContractCopyTool = ({ contractAddress, className = "" }: ContractCo
               <span className="hidden sm:inline">COPY</span>
             </>
           )}
-        </MSPaintButton>
+        </button>
       </div>
       
       <div className="text-center mt-2">

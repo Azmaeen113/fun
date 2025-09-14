@@ -13,15 +13,6 @@ type SpriteState = {
 
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
-  '/images/Parachuting FUN Completed NO BG.png',
-  '/images/Flying Fun Completed NO BG.png',
-  '/images/Roller Coaster FUN Completed NO BG.png',
-  '/images/Rope Fun Completed NO BG.png',
-  '/images/Shocked FUN Completed NO BG.png',
-  '/images/Statue FUN Completed NO BG.png',
-  '/images/Swimming FUN Completed NO BG.png',
-  '/images/Upside Down FUN Completed NO BG.png',
-  '/images/Vomitting FUN Completed NO BG.png',
 ]
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min
