@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "@/hooks/use-toast";
 import HeroSprites from '@/components/HeroSpritesClean'
 
@@ -6,6 +6,36 @@ const Index = () => {
   const [copied, setCopied] = useState(false);
   
   const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
+  // SIMPLE CURSOR FORCE - This will definitely work
+  useEffect(() => {
+    // Force cursor on everything
+    const forceCursor = () => {
+      // Set cursor on body - use small SVG cursor
+      document.body.style.cursor = 'url(data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%23000"/></svg>) 12 12, crosshair';
+      
+      // Set cursor on all elements
+      const allElements = document.querySelectorAll('*');
+      allElements.forEach(el => {
+        const element = el as HTMLElement;
+        if (element.tagName === 'BUTTON' || element.tagName === 'A' || element.classList.contains('clickable')) {
+          element.style.cursor = 'pointer';
+        } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+          element.style.cursor = 'text';
+        } else {
+          element.style.cursor = 'url(data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="%23000"/></svg>) 12 12, crosshair';
+        }
+      });
+      
+      console.log('Cursor forced successfully!');
+    };
+
+    // Force cursor immediately and after delays
+    forceCursor();
+    setTimeout(forceCursor, 100);
+    setTimeout(forceCursor, 1000);
+    setTimeout(forceCursor, 3000);
+  }, []);
 
   const copyToClipboard = async () => {
     try {
@@ -319,6 +349,7 @@ const Index = () => {
           </a>
         </div>
       </section>
+
 
       {/* Enhanced Footer - Now second */}
       <footer className="border-t-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-8 mt-16 shadow-lg">
