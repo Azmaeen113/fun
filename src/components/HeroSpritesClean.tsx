@@ -14,6 +14,14 @@ type SpriteState = {
 const IMAGES = [
   '/images/Another Roller Coaster FUN Completed NO BG.png',
   '/images/Parachuting FUN Completed NO BG.png',
+  '/images/Flying Fun Completed NO BG.png',
+  '/images/Roller Coaster FUN Completed NO BG.png',
+  '/images/Rope Fun Completed NO BG.png',
+  '/images/Shocked FUN Completed NO BG.png',
+  '/images/Statue FUN Completed NO BG.png',
+  '/images/Swimming FUN Completed NO BG.png',
+  '/images/Upside Down FUN Completed NO BG.png',
+  '/images/Vomitting FUN Completed NO BG.png',
 ]
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min
@@ -38,6 +46,17 @@ export default function HeroSpritesClean({ count = 20 }: { count?: number }) {
       img.style.willChange = 'transform, opacity'
       img.draggable = false
       img.style.display = 'block'
+      
+      // Add error handling for image loading
+      img.onerror = () => {
+        console.warn('Failed to load image:', img.src)
+        img.style.display = 'none'
+      }
+      
+      img.onload = () => {
+        img.style.display = 'block'
+      }
+      
       return img
     }
 
@@ -61,11 +80,15 @@ export default function HeroSpritesClean({ count = 20 }: { count?: number }) {
       s.rotation = rand(-25, 25)
       s.vRotation = rand(-40, 40)
 
-      s.el.src = IMAGES[Math.floor(Math.random() * IMAGES.length)]
+      const imageSrc = IMAGES[Math.floor(Math.random() * IMAGES.length)]
+      s.el.src = imageSrc
       s.el.style.opacity = String(rand(0.45, 1))
       s.el.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${s.rotation}deg) scale(${s.size})`
       s.el.style.width = `${90 * s.size}px`
       s.el.style.height = 'auto'
+      
+      // Debug: log the image source being used
+      console.log('Loading background sprite image:', imageSrc)
     }
 
     const spawn = (initial = false) => {

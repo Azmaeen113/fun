@@ -11,10 +11,7 @@ Enhanced with sophisticated retro colors and modern typography
 */
 
 @layer base {
-  /* Custom cursor */
-  * {
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), auto;
-  }
+  /* Custom cursor - removed duplicate */
   
   :root {
     /* Enhanced FUN Memecoin Brand Colors */
@@ -118,32 +115,55 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   /* Apply custom cursor to entire website */
-  * {
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), auto;
-  }
-
-  /* Alternative: Apply to specific elements */
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'VT323', 'VCR OSD Mono', monospace;
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), auto;
+    cursor: url('./images/cursor.png') 16 16, auto;
+  }
+
+  /* Apply custom cursor to all elements */
+  * {
+    cursor: url('./images/cursor.png') 16 16, auto;
   }
 
   /* For different cursor states, you can also specify: */
-  a, button {
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), pointer;
+  a, button, .clickable {
+    cursor: url('./images/cursor.png') 16 16, pointer;
   }
 
-  /* If you need to resize the cursor image, you might need to do it externally
-     or use a different approach since CSS cursor doesn't support sizing */
-
-  /* Optional: Fallback for different cursor states */
-  .clickable {
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), pointer;
+  /* Text input cursor */
+  input, textarea {
+    cursor: url('./images/cursor.png') 16 16, text;
   }
 
-  .text-input {
-    cursor: url('/images/Hand_drawing-removebg-preview.png'), text;
+  /* Ensure cursor works on all interactive elements */
+  .ms-paint-button, .copy-icon-button, .contract-copy-tool {
+    cursor: url('./images/cursor.png') 16 16, pointer !important;
+  }
+
+  /* Additional cursor implementation for better browser support */
+  html {
+    cursor: url('./images/cursor.png') 16 16, auto;
+  }
+
+  /* Fallback for browsers that don't support custom cursors */
+  @supports not (cursor: url()) {
+    body, * {
+      cursor: pointer;
+    }
+  }
+
+  /* Force cursor on specific elements */
+  .ms-paint-button {
+    cursor: url('./images/cursor.png') 16 16, pointer !important;
+  }
+
+  .copy-icon-button {
+    cursor: url('./images/cursor.png') 16 16, pointer !important;
+  }
+
+  .contract-copy-tool {
+    cursor: url('./images/cursor.png') 16 16, pointer !important;
   }
 
   /* Modern Retro Typography System */
@@ -211,7 +231,7 @@ Enhanced with sophisticated retro colors and modern typography
   /* Enhanced MS Paint Button Style */
   .ms-paint-button {
     background: linear-gradient(135deg, hsl(var(--fun-mint-green)), hsl(var(--fun-clear-green)));
-    border: 3px solid hsl(var(--fun-deep-teal));
+    border: 2px solid hsl(var(--fun-deep-teal));
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
     font-family: 'Inter', sans-serif;
@@ -220,7 +240,7 @@ Enhanced with sophisticated retro colors and modern typography
     color: hsl(var(--fun-charcoal));
     cursor: url('/images/Hand_drawing-removebg-preview.png'), pointer;
     transition: all 0.3s var(--smooth-ease);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
@@ -234,14 +254,14 @@ Enhanced with sophisticated retro colors and modern typography
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.5s var(--smooth-ease);
   }
 
   .ms-paint-button:hover {
     background: linear-gradient(135deg, hsl(var(--fun-clear-green)), hsl(var(--fun-mint-green)));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .ms-paint-button:hover::before {
@@ -385,6 +405,7 @@ Enhanced with sophisticated retro colors and modern typography
     padding: 0.25rem 0.6rem; /* even smaller padding for lower button height */
     font-size: 0.85rem;
     line-height: 1; /* reduce vertical height */
+    border: 1.5px solid hsl(var(--fun-deep-teal)); /* thinner border on mobile */
   }
 
   .right-to-left {
@@ -452,6 +473,12 @@ Enhanced with sophisticated retro colors and modern typography
       max-width: 220px;
       width: 90%;
       height: auto;
+    }
+    
+    /* Make ticket image smaller on mobile to prevent cutoff */
+    .landscape-left-rotated {
+      max-width: 200px !important;
+      width: 75% !important;
     }
 
     /* Make the Paint brush (sticker) smaller on phones */
@@ -1210,6 +1237,7 @@ Enhanced with sophisticated retro colors and modern typography
     transition: all 0.3s var(--smooth-ease);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .contract-copy-tool::before {
@@ -1224,6 +1252,7 @@ Enhanced with sophisticated retro colors and modern typography
   }
 
   .contract-copy-tool:hover {
+    background: linear-gradient(135deg, hsl(var(--fun-cream-white)), hsl(var(--fun-cream-white)));
     transform: translateY(-2px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
   }
@@ -1699,6 +1728,24 @@ Enhanced with sophisticated retro colors and modern typography
   .contract-copy-tool {
     padding: 12px 16px;
     font-size: 0.9rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Make contract address text smaller on mobile */
+  .contract-address-text {
+    font-size: 0.6rem;
+    margin-right: 6px;
+    word-break: break-all;
+    line-height: 1.2;
+  }
+  
+  /* Make copy button smaller on mobile */
+  .copy-icon-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    min-width: 40px;
+    flex-shrink: 0;
   }
   
   /* Paint brush mobile */
@@ -1805,6 +1852,34 @@ Enhanced with sophisticated retro colors and modern typography
       font-size: 0.8rem;
     }
     
+    /* Make contract address text even smaller on very small screens */
+    .contract-address-text {
+      font-size: 0.5rem;
+      margin-right: 4px;
+      word-break: break-all;
+      line-height: 1.1;
+    }
+    
+    /* Make copy button even smaller on very small screens */
+    .copy-icon-button {
+      padding: 6px 10px;
+      font-size: 0.7rem;
+      min-width: 35px;
+      flex-shrink: 0;
+    }
+    
+    /* Make disclaimer text even smaller on very small screens */
+    .pixelated-description {
+      font-size: 0.7rem !important;
+      line-height: 1.3;
+    }
+  
+  /* Make disclaimer text smaller on mobile */
+  .pixelated-description {
+    font-size: 0.8rem !important;
+    line-height: 1.4;
+  }
+    
     /* Hero image mobile */
     .hero-image {
       max-width: 250px;
@@ -1813,6 +1888,12 @@ Enhanced with sophisticated retro colors and modern typography
     /* PUMPFUNIVERSE character mobile */
     .hero-character-image {
       max-width: 200px;
+    }
+    
+    /* Make ticket image even smaller on very small screens */
+    .landscape-left-rotated {
+      max-width: 160px !important;
+      width: 70% !important;
     }
     
     /* Typography very small */
@@ -1885,6 +1966,24 @@ Enhanced with sophisticated retro colors and modern typography
   .contract-copy-tool {
     padding: 12px 16px;
     font-size: 0.9rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Make contract address text smaller on mobile */
+  .contract-address-text {
+    font-size: 0.6rem;
+    margin-right: 6px;
+    word-break: break-all;
+    line-height: 1.2;
+  }
+  
+  /* Make copy button smaller on mobile */
+  .copy-icon-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    min-width: 40px;
+    flex-shrink: 0;
   }
   
   /* Paint brush mobile */

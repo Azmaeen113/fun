@@ -34,7 +34,7 @@ const Index = () => {
       <HeroSprites count={30} />
 
   {/* Enhanced Header with Modern Navigation (now fixed) */}
-  <header className="site-header fixed top-0 left-0 w-full border-b-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-3 shadow-lg z-50 h-20">
+  <header className="site-header fixed top-0 left-0 w-full border-b-2 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-3 shadow-lg z-50 h-20">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-col lg:flex-row gap-6">
           {/* Logo */}
           <div className="flex items-center">
@@ -143,7 +143,7 @@ const Index = () => {
                    <h1 className="font-black text-black tracking-wide text-6xl lg:text-8xl">FUN</h1>
                  </div>
                  <div className="flex items-center justify-center gap-4">
-                   <span className="font-bold text-black text-3xl lg:text-6xl">OF the</span>
+                   <span className="font-bold text-black text-3xl lg:text-6xl">of the</span>
                    <img 
                      src="/images/PUMP_pill_Painted-removebg-preview.png" 
                      alt="PUMP" 
@@ -197,7 +197,7 @@ const Index = () => {
                  {/* Box Content */}
                  <div className="p-4 sm:p-6 md:p-8">
                      <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl mb-4">
-                       PUMPFUNVERSE is a large amusement park with candle jumping, swingers and jeets popping activities.
+                       PUMPFUNVERSE is a large amusement park with jumping, swingers, jeets popping activities, and much more.
                      </p>
                      <p className="roboto-text text-sm sm:text-base md:text-lg lg:text-2xl xl:text-4xl">
                        Join me now at this fun playground where we can mess around, such as using the announcement system to call out Alon, slurping some green and red lollipops with unstable degens, or hanging out at the DEXSCREENER arena for PvP plays.
@@ -287,7 +287,7 @@ const Index = () => {
 
       {/* Enhanced Social Links - Centered above footer */}
       <section className="py-16 bg-white text-center">
-        <div className="flex justify-center items-center space-x-12 lg:space-x-16">
+        <div className="flex justify-center items-center space-x-12 lg:space-x-16 mt-8">
           <a 
             href="https://dexscreener.com" 
             target="_blank" 
