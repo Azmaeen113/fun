@@ -83,25 +83,35 @@ const Index = () => {
           </div>
 
           {/* Enhanced Menu with Hanging Characters */}
-          <nav className="hidden sm:flex space-x-6 lg:space-x-8 flex-wrap justify-center items-center">
-            <div className="relative group">
-              <button className="ms-paint-button font-accent text-base">
+          <nav className="hidden sm:flex space-x-6 lg:space-x-8 xl:space-x-10 flex-wrap justify-center items-center">
+            <div className="relative nav-group">
+              <button 
+                className="ms-paint-button font-accent text-base"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
                 ABOUT
               </button>
               <img 
                 src="/images/Upside Down FUN Completed NO BG.png" 
                 alt="Upside Down FUN" 
-                className="menu-hanger w-18 h-auto transition-transform duration-300 group-hover:scale-110" 
+                className="menu-hanger w-18 h-auto transition-transform duration-300" 
               />
             </div>
             
-            <div className="relative group">
-              <button className="ms-paint-button font-accent text-base">
+            <div className="relative nav-group chart-nav-group">
+              <a 
+                href="https://dexscreener.com/solana/gzw3tekfvxzoycvsgujwhjkuhpzdeftqbsdkukiqssyk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="ms-paint-button font-accent text-base"
+              >
                 CHART
-              </button>
+              </a>
             </div>
             
-            <div className="relative group">
+            <div className="relative nav-group">
               <a 
                 href="https://x.com/FunGuyOfThePump" 
                 target="_blank" 
@@ -113,7 +123,7 @@ const Index = () => {
               <img
                 src="/images/Rope Fun Completed NO BG.png"
                 alt="Rope Fun"
-                className="menu-hanger w-18 h-auto transition-transform duration-300 group-hover:scale-110"
+                className="menu-hanger w-18 h-auto transition-transform duration-300"
                 style={{ transform: 'translateX(-50%) scale(0.5)' }}
               />
             </div>
@@ -143,8 +153,16 @@ const Index = () => {
       >
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col space-y-4">
-            <a href="#about" className="ms-paint-button text-lg py-3 px-4">ABOUT</a>
-            <a href="#chart" className="ms-paint-button text-lg py-3 px-4">CHART</a>
+            <button 
+              className="ms-paint-button text-lg py-3 px-4"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setMobileNavOpen(false);
+              }}
+            >
+              ABOUT
+            </button>
+            <a href="https://dexscreener.com/solana/gzw3tekfvxzoycvsgujwhjkuhpzdeftqbsdkukiqssyk" target="_blank" rel="noopener noreferrer" className="ms-paint-button text-lg py-3 px-4">CHART</a>
             <a href="https://x.com/FunGuyOfThePump" target="_blank" rel="noopener noreferrer" className="ms-paint-button text-lg py-3 px-4">FOLLOW ON X</a>
           </div>
         </div>
@@ -154,7 +172,7 @@ const Index = () => {
   {/* add top padding equal to header height so content is not hidden */}
   <main className="max-w-7xl mx-auto px-6 pt-20 pb-12 relative">
          {/* Hero Section with FUN Character and FUN on the PUMP title */}
-         <section className="text-center mb-16 relative">
+         <section id="hero-section" className="text-center mb-16 relative">
            <div className="mb-12 mt-4">
               <div className="relative w-full h-auto">
                 <img
@@ -319,10 +337,10 @@ const Index = () => {
       <section className="py-16 bg-white text-center">
         <div className="flex justify-center items-center space-x-12 lg:space-x-16 mt-8">
           <a 
-            href="https://dexscreener.com" 
+            href="https://dexscreener.com/solana/gzw3tekfvxzoycvsgujwhjkuhpzdeftqbsdkukiqssyk" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
+            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group chart-link"
           >
             <div className="social-logo-container">
               <img 
@@ -337,7 +355,7 @@ const Index = () => {
             href="https://x.com/FunGuyOfThePump" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group"
+            className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-110 transform group twitter-link"
           >
             <div className="social-logo-container">
               <img 

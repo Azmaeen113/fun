@@ -1156,6 +1156,64 @@ Enhanced with sophisticated retro colors and modern typography
     transform: scale(1.05);
   }
 
+  /* Individual hover effects for social links */
+  .chart-link:hover .social-logo-container {
+    transform: scale(1.1);
+  }
+
+  .twitter-link:hover .social-logo-container {
+    transform: scale(1.1);
+  }
+
+  /* Ensure hover effects don't interfere with each other */
+  .chart-link:hover .twitter-link,
+  .twitter-link:hover .chart-link {
+    transform: none;
+  }
+
+  /* Fix navigation button hover interference */
+  .nav-group:hover .nav-group:not(:hover) {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Individual navigation button hover effects */
+  .nav-group:hover .menu-hanger {
+    transform: translateX(-50%) scale(1.1);
+  }
+
+  .nav-group:not(:hover) .menu-hanger {
+    transform: translateX(-50%) scale(1);
+  }
+
+  /* Specific CHART button hover isolation */
+  .chart-nav-group {
+    isolation: isolate;
+    position: relative;
+    z-index: 1;
+  }
+
+  .chart-nav-group:hover {
+    z-index: 10;
+  }
+
+  /* Ensure CHART button hover doesn't affect other buttons */
+  .chart-nav-group:hover ~ .nav-group,
+  .nav-group:hover ~ .chart-nav-group {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Prevent any hover effects from leaking to FOLLOW ON X */
+  .chart-nav-group:hover + .nav-group {
+    pointer-events: none;
+  }
+
+  .chart-nav-group:hover + .nav-group * {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
   .social-logo {
     object-fit: contain;
     image-rendering: pixelated;
