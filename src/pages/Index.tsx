@@ -355,7 +355,7 @@ const Index = () => {
       <footer className="border-t-4 border-fun-teal bg-gradient-to-r from-fun-cream to-white p-8 mt-16 shadow-lg">
         <div className="max-w-7xl mx-auto text-center">
            <p className="font-body text-base lg:text-lg text-fun-charcoal leading-relaxed max-w-4xl mx-auto pixelated-description">
-             Disclaimer: This is just a meme coin, not financial advice—do your own research, apes only at your own risk and for the lols.
+             Disclaimer: This is just a meme coin, not financial advice—do your own research, ape only at your own risk and for the lols.
            </p>
         </div>
       </footer>

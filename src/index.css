@@ -328,7 +328,7 @@ Enhanced with sophisticated retro colors and modern typography
 
   @media (max-width: 480px) {
     .flying-fun-animation {
-      width: 240px; /* slightly smaller on very small screens */
+      width: 1020px; /* 1.7x larger than previous size for mobile visibility */
     }
     .swimming-fun-animation {
       width: 240px; /* slightly smaller on very small screens */
@@ -1582,7 +1582,7 @@ Enhanced with sophisticated retro colors and modern typography
 @media (max-width: 1024px) {
   /* Tablet adjustments */
   .flying-fun-animation {
-    width: 80px;
+    width: 340px; /* 1.7x larger than previous size for tablet */
     height: auto;
   }
   .swimming-fun-animation {
@@ -1753,7 +1753,7 @@ Enhanced with sophisticated retro colors and modern typography
     }
     
     .flying-fun-animation {
-      width: 40px;
+      width: 425px; /* 1.7x larger than previous size for mobile */
       height: auto;
     }
     .swimming-fun-animation {
@@ -1860,7 +1860,7 @@ Enhanced with sophisticated retro colors and modern typography
 @media (max-width: 1024px) {
   /* Tablet adjustments */
   .flying-fun-animation {
-    width: 80px;
+    width: 340px; /* 1.7x larger than previous size for tablet */
     height: auto;
   }
   .swimming-fun-animation {
@@ -1966,9 +1966,9 @@ Enhanced with sophisticated retro colors and modern typography
 }
 
 @media (max-width: 480px) {
-  /* Very small screens - further reduce sizes */
+  /* Very small screens - 1.7x larger for visibility */
   .flying-fun-animation {
-    width: 40px;
+    width: 170px; /* 1.7x larger than previous size for very small screens */
     height: auto;
   }
   
